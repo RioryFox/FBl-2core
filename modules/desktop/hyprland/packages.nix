@@ -212,10 +212,12 @@
     ipfetch
     pfetch
     smartmontools
-    light
+    #light
     lm_sensors
     mission-center
-    neofetch
+    #neofetch
+    fastfetch
+    hyfetch
 
     # Development and virtualization
     luarocks
