@@ -1,0 +1,43 @@
+# Nix build outputs
+/result
+/result-*
+/flake.lock.fbl-seed
+
+# FBL local/archive material
+/_archive/
+/SSH-pub/
+/hosts/GF01WS-16/dotfiles/snapshots/
+/hosts/GF01WS-16/legacy-installer/
+
+# Nested/local Git metadata
+.git/
+**/.git/
+
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+**/secrets/
+credentials/
+**/credentials/
+
+# Runtime/cache/test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.cache/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db

@@ -1,0 +1,51 @@
+{ pkgs, ... }:
+
+with pkgs;
+[
+  aircrack-ng
+  arp-scan
+  btop
+  curl
+  dig
+  dmidecode
+  fd
+  file
+  gcc
+  gh
+  gnumake
+  htop
+  httpie
+  inetutils
+  inxi
+  iperf3
+  iw
+  jq
+  lm_sensors
+  lsof
+  lynis
+  mtr
+  nano
+  netcat-openbsd
+  nmap
+  openssl
+  p7zip
+  parted
+  pciutils
+  python3
+  rclone
+  ripgrep
+  rsync
+  screen
+  tcpdump
+  testssl
+  tmux
+  traceroute
+  tree
+  unzip
+  usbutils
+  vim
+  wavemon
+  wget
+  whois
+  yq
+]

@@ -1,0 +1,46 @@
+{ pkgs, ... }:
+
+with pkgs;
+[
+  aircrack-ng
+  binwalk
+  burpsuite
+  cewl
+  crunch
+  dirb
+  dnsmasq
+  edb
+  enum4linux
+  enum4linux-ng
+  exploitdb
+  ffuf
+  fierce
+  ghidra
+  gobuster
+  hashcat
+  hashcat-utils
+  hcxtools
+  john
+  kismet
+  medusa
+  metasploit
+  mitmproxy
+  nasm
+  nikto
+  nmap
+  payloadsallthethings
+  proxychains-ng
+  pwncat
+  python312Packages.pypykatz
+  radare2
+  responder
+  seclists
+  social-engineer-toolkit
+  sqlmap
+  thc-hydra
+  theharvester
+  wafw00f
+  wifite2
+  wireshark
+  wpscan
+]

@@ -1,0 +1,32 @@
+{ config, inputs, ... }:
+
+let
+  port = config.fbl.ports.tcp.comfyui;
+  address = config.fbl.network.hosts.cr01;
+  lanInterface = config.fbl.network.interfaces.cr01Lan;
+  dataDir = config.fbl.storage.hot.comfyuiDataDir;
+in
+{
+  imports = [ inputs.comfyui-nix.nixosModules.default ];
+
+  # Direct LAN access is intentional for the first validation stage.
+  # Open WebUI can later consume the same ComfyUI API endpoint, after which
+  # direct browser exposure can be narrowed without changing the backend.
+  services.comfyui = {
+    enable = true;
+    gpuSupport = "cuda";
+    enableManager = false;
+    inherit port;
+    listenAddress = address;
+    inherit dataDir;
+    openFirewall = false;
+    extraArgs = [ "--lowvram" ];
+    requiresMounts = [ "nix.mount" ];
+  };
+
+  # The dedicated service account needs access to NVIDIA/render device nodes.
+  systemd.services.comfyui.serviceConfig.SupplementaryGroups = [ "video" "render" ];
+
+  # FBL owns firewall exposure explicitly; the upstream module does not open it.
+  networking.firewall.interfaces.${lanInterface}.allowedTCPPorts = [ port ];
+}
