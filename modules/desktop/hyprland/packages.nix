@@ -151,7 +151,7 @@
     swappy
     serie
     swaynotificationcenter
-    swww
+    awww
     unzip
     wallust
     wdisplays

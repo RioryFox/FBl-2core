@@ -109,7 +109,7 @@ in {
         '$scriptsDir = $HOME/.config/hypr/scripts' \
         'exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP' \
         'exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP' \
-        'exec-once = swww-daemon --format xrgb' \
+        'exec-once = awww-daemon --format xrgb' \
         'exec-once = $scriptsDir/Polkit-NixOS.sh' \
         'exec-once = nm-applet --indicator' \
         'exec-once = swaync' \

@@ -67,8 +67,8 @@ in {
         shotcut
         traceroute
         rclone
-	pipx
-	gajim
+        #pipx
+        gajim
         minicom
         (python3.withPackages (python-pkgs:
           with python-pkgs; [
@@ -78,7 +78,7 @@ in {
             beautifulsoup4
             pip
             myVkApi
-            pipx
+            #pipx
             pytz
             aiogram
           ]))

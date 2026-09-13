@@ -33,7 +33,7 @@ let
     pyquery
     flask
     myVkApi
-    pipx
+    #pipx
   ]);
 
 in {
@@ -48,7 +48,7 @@ in {
     git
     winbox
     rclone
-    pipx
+    #pipx
     python3
     xauth
     python-packages
@@ -79,9 +79,9 @@ in {
       cliPackage = pkgs.xray;
     };
     fprintd = {
-      enable = true;
+      enable = false;
       tod = {
-        enable = true;
+        enable = false;
         driver = pkgs.libfprint-2-tod1-goodix;
       };
     };
