@@ -3,7 +3,7 @@
 let
   address = config.fbl.network.hosts.cr01;
   port = config.fbl.ports.tcp.gitea;
-  sshPort = config.fbl.ports.tcp.ssh;
+  sshPort = config.fbl.ports.tcp.giteaSsh;
   lanInterface = config.fbl.network.interfaces.cr01Lan;
 in
 {
@@ -22,11 +22,16 @@ in
         DOMAIN = address;
         ROOT_URL = "http://${address}:${toString port}/";
 
-        # Reuse FBL system OpenSSH for clone/push. Gitea must not own a second
-        # SSH listener or introduce another SSH port outside the registry.
+        # Keep Git transport isolated from Cr01 system OpenSSH: Gitea owns a
+        # dedicated built-in SSH listener, while host administration stays on :22.
         DISABLE_SSH = false;
-        START_SSH_SERVER = false;
+        START_SSH_SERVER = true;
+        BUILTIN_SSH_SERVER_USER = "git";
+        SSH_USER = "git";
+        SSH_DOMAIN = address;
         SSH_PORT = sshPort;
+        SSH_LISTEN_HOST = address;
+        SSH_LISTEN_PORT = sshPort;
       };
 
       # Users are provisioned deliberately by an administrator. The first
@@ -42,8 +47,10 @@ in
   # A disabled service must not leave its inbound listener reachable.
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.gitea.enable
-    then [ port ]
+    then [ port sshPort ]
     else [ ];
 }
 
 # [GPT-5.6 Sol] изменил в 17:40 13.09.2026 (МСК).
+
+# [GPT-5.6 Sol] изменил в 20:51 13.09.2026 (МСК).

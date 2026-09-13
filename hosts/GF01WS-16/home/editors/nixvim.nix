@@ -12,7 +12,7 @@ in {
   imports = [inputs.nixvim.homeModules.nixvim];
 
   programs.nixvim = {
-    enable = true;
+    enable = false;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;

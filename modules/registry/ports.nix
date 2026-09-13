@@ -15,6 +15,8 @@
         nextcloud = 80;
         # Cr01 internal Git forge / primary writable Git source.
         gitea = 3000;
+        # Gitea built-in SSH listener for clone/push; system OpenSSH remains on ssh=22.
+        giteaSsh = 2222;
         open-webui = 3001;
         # Authentik public nginx entrypoint; Authentik backend uses the same
         # number on loopback only.
@@ -70,3 +72,5 @@
     };
   };
 }
+
+# [GPT-5.6 Sol] изменил в 20:51 13.09.2026 (МСК).

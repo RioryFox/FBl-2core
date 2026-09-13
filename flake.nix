@@ -7,12 +7,12 @@
     extra-substituters = [
       "https://comfyui.cachix.org"
       "https://nix-community.cachix.org"
-      "https://cuda-maintainers.cachix.org"
+      #"https://cuda-maintainers.cachix.org"
     ];
     extra-trusted-public-keys = [
       "comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      #"cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
 
@@ -28,14 +28,14 @@
     # packaged Authentik release.
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
 
-    nixpkgsGF.url = "github:NixOS/nixpkgs/00c21e4c93d963c50d4c0c89bfa84ed6e0694df2";
+    nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/cbd8a72e5fe6af19d40e2741dc440d9227836860";
       inputs.nixpkgs.follows = "nixpkgsGF";
     };
 
-    nixvim.url = "github:nix-community/nixvim/51abc532525e486176f9a7b24b17908c60017b54";
+    #nixvim.url = "github:nix-community/nixvim/51abc532525e486176f9a7b24b17908c60017b54";
     alejandra.url = "github:kamadorueda/alejandra/8f47c5e82ee8e6e8adcc1748be0056a1e349f7e8";
 
     microvm = {

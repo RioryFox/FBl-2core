@@ -29,9 +29,10 @@ let
   # Собираем все Python-пакеты в одно окружение
   python-packages = pkgs.python3.withPackages (ps: with ps; [
     requests
+    pandas
     pyquery
     flask
-    myVkApi   # ← вот здесь добавляем нашу vk_api
+    myVkApi
     pipx
   ]);
 
@@ -41,18 +42,16 @@ in {
   environment.systemPackages = with pkgs; [
     mpvpaper
     amnezia-vpn
-    amneziawg-go
     xray
     fastfetch
     obs-studio
-    stable-diffusion-cpp-vulkan
     git
     winbox
     rclone
     pipx
     python3
     xauth
-    python-packages   # ← добавляем собранное окружение в systemPackages
+    python-packages
   ];
 
   programs = {
@@ -88,5 +87,3 @@ in {
     };
   };
 }
-
-# [GPT-5.6 Sol] изменил в 00:09 07.09.2026 (МСК).
