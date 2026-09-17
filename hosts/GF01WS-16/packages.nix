@@ -52,6 +52,7 @@ in {
     python3
     xauth
     python-packages
+    convertx
   ];
 
   programs = {
@@ -65,12 +66,19 @@ in {
 
     amnezia-vpn = {
       enable = true;
-      package = pkgs.amnezia-vpn;
+      #package = pkgs.amneziawg-go;
     };
 
     thunderbird = {
       enable = true;
     };
+  };
+
+  systemd.services = {
+    AmneziaVPN.path = with pkgs; [
+      amneziawg-go
+      amneziawg-tools
+    ];
   };
 
   services = {
