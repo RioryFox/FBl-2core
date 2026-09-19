@@ -62,6 +62,7 @@ in
     "https://nix-community.cachix.org?priority=16"
     #"https://cuda-maintainers.cachix.org?priority=17"
   ];
+
   fbl.cache.extraTrustedPublicKeys = [
     "comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -134,6 +135,14 @@ in
     smartmontools
     vulkan-tools
   ];
+
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    memoryPercent = 30;
+    swapDevices = 1;
+    algorithm = "zstd";
+  };
 
   system.stateVersion = "26.11";
 }

@@ -133,8 +133,8 @@ in {
     };
 
     smartd = {
-      enable = false;
-      autodetect = true;
+      enable = true;
+      #autodetect = true;
     };
 
     gvfs.enable = true;
