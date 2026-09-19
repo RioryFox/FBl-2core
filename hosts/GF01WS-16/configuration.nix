@@ -30,7 +30,7 @@ in {
     ../../modules/hardware/local-hardware-clock.nix
 
 
-    ../../programs/vscodium.nix
+    ../../modules/programs/vscodium.nix
   ];
 
   boot = {

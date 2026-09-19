@@ -2,7 +2,7 @@
 
 let
 
-        wallpaper = /home/rioryfox/Pictures/wallpapers/all/test.png
+        wallpaper = ../../assets/vscodium-wallpaper/test.png;
         vscodiumFbl = pkgs.vscodium.overrideAttrs (old: {
         postInstall = (old.postInstall or "") + ''
         css="$(find "$out" -name 'workbench.desktop.main.css' | head -n1)"
