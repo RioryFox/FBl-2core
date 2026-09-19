@@ -28,6 +28,9 @@ in {
     ../../modules/hardware/intel-drivers.nix
     ../../modules/hardware/vm-guest-services.nix
     ../../modules/hardware/local-hardware-clock.nix
+
+
+    ../../programs/vscodium.nix
   ];
 
   boot = {
