@@ -66,7 +66,6 @@ in {
 
     amnezia-vpn = {
       enable = true;
-      #package = pkgs.amneziawg-go;
     };
 
     thunderbird = {
