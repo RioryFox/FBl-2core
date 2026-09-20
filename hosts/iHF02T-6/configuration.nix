@@ -13,9 +13,6 @@
     ./vpn-gateway.nix
   ];
 
-  # Privacy underlay: Xray/VLESS starts from a root-only local source, then Tor
-  # is forced through Xray. Transit interception stays OFF until one explicit
-  # MikroTik test client is selected below.
   fbl.vpnGateway = {
     enable = true;
     vlessSourceFile = "/var/lib/fbl-secrets/vless.uri";
@@ -29,8 +26,6 @@
     };
   };
 
-  # Historical Squid/MITM experiment; intentionally separate from the privacy
-  # gateway and disabled unless explicitly revisited.
   fbl.ihfGatewayTest = {
     enable = false;
     ingressInterface = "enp0s10";
@@ -52,9 +47,6 @@
     firewall.interfaces.enp0s10.allowedTCPPorts = [ 22 3002 3128 9100 9301 ];
   };
 
-  # MikroTik is the confirmed FBL default gateway. The route was previously
-  # added manually during diagnostics; keep it across reboot without pinning
-  # the still-DHCP iHF address itself.
   systemd.services.fbl-default-route = {
     description = "Ensure the iHF02 FBL default route";
     wantedBy = [ "multi-user.target" ];

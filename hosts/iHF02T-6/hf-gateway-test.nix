@@ -181,8 +181,6 @@ in
 
     environment.systemPackages = with pkgs; [ nftables openssl ];
 
-    # Test mode replaces only Squid's generated text. Suricata and the other
-    # services from hf-proxy.nix remain enabled and unchanged.
     services.squid.configText = lib.mkForce squidConfig;
 
     systemd.tmpfiles.rules = [

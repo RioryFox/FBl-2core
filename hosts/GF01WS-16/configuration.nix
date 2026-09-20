@@ -35,6 +35,7 @@ in {
 
     ../../modules/programs/vscodium.nix
     ../../modules/programs/steam.nix
+    ../../modules/programs/amnezia-vpn.nix
   ];
 
   boot = {
@@ -102,15 +103,6 @@ in {
     hostName = "GF01WS-16";
     networkmanager.enable = true;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
-    firewall = {
-      enable = true;
-      # Only owned/listening services should open inbound ports. Historical
-      # 443/11434/5000/8081/42001 openings had no active GF01 service owner.
-      allowedTCPPorts =
-        if config.services.openssh.enable
-        then [ sshPort ]
-        else [ ];
-    };
   };
 
   services.automatic-timezoned.enable = true;

@@ -33,9 +33,9 @@ in
     ../../modules/projects/vision.nix
     ../../modules/programs/steam.nix
     inputs.microvm.nixosModules.host
-    ./ihf02-vm-host.nix
-    ./ivn01-vm-host.nix
-    ./iaf01-vm-host.nix
+    #./ihf02-vm-host.nix
+    #./ivn01-vm-host.nix
+    #./iaf01-vm-host.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

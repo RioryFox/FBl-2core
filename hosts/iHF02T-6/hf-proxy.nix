@@ -188,7 +188,6 @@ in
     };
   };
 
-  # Squid owns its LAN exposure. A registered port alone never opens firewall.
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.squid.enable
     then [ squidPort ]

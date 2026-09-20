@@ -48,8 +48,4 @@ in
     ];
     description = "Single source of truth for externally monitored FBL web targets.";
   };
-}
-
-# [GPT-5.6 Sol] создал в 23:53 05.09.2026 (МСК).
-
-# [GPT-5.6 Sol] изменил в 23:20 08.09.2026 (МСК).
+}              

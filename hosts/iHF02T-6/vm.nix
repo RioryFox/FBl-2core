@@ -95,9 +95,6 @@ in
 
     nameservers = [ upstreamDns ];
 
-    # Central Grafana/Prometheus moved to Cr01. iHF exposes only SSH and its
-    # explicit proxy listener on the FBL LAN; monitoring agent traffic is
-    # outbound over the host-only TAP.
     firewall.interfaces.${lanInterface}.allowedTCPPorts =
       if config.services.openssh.enable
       then [ sshPort ]
