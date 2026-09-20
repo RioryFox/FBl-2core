@@ -28,11 +28,30 @@ let
 EOF
     '';
   });
-  
+
+  vscodiumFblLauncher = pkgs.writeShellScriptBin "codium-fbl" ''
+    exec ${vscodiumFbl}/bin/codium \
+      --user-data-dir "''${XDG_CONFIG_HOME:-$HOME/.config}/VSCodium-FBL" \
+      --extensions-dir "''${XDG_DATA_HOME:-$HOME/.local/share}/vscodium-fbl/extensions" \
+      "$@"
+  '';
+
+  vscodiumFblDesktop = pkgs.makeDesktopItem {
+    name = "vscodium-fbl";
+    desktopName = "VSCodium FBL";
+    genericName = "FBL Experimental Editor";
+    comment = "Experimental FBL VSCodium build";
+    exec = "codium-fbl %F";
+    icon = "vscodium";
+    terminal = false;
+    categories = [ "Development" "IDE" ];
+  };
 
 in
 {
   environment.systemPackages = [
     pkgs.vscodium
+    vscodiumFblLauncher
+    vscodiumFblDesktop
   ];
 }
