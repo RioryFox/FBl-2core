@@ -29,9 +29,6 @@ in
     extraArgs = [ "--confirm-legal-notice" ];
   };
 
-  # Prepare external-storage directories only after the real CLOUD02 mount is
-  # available. systemd-tmpfiles is intentionally not used below the mountpoint
-  # so a missing disk can never create a fallback download tree on Cr01 root.
   systemd.services.qbittorrent-storage-prepare = {
     description = "Prepare qBittorrent storage on FBL_CLOUD02";
     before = [ "qbittorrent.service" ];
@@ -49,7 +46,6 @@ in
 
   systemd.services.qbittorrent.unitConfig.RequiresMountsFor = [ cloudMount02 ];
 
-  # FBL LAN only; upstream NAT/port-forwarding remains a separate router policy.
   networking.firewall.interfaces.${lanInterface} = {
     allowedTCPPorts =
       if config.services.qbittorrent.enable
@@ -61,7 +57,3 @@ in
       else [ ];
   };
 }
-
-# GPT-5.6 Sol изменил в 18:15 05.09.2026 (МСК).
-
-# [GPT-5.6 Sol] изменил в 00:43 13.09.2026 (МСК).

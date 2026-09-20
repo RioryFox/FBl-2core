@@ -42,7 +42,6 @@ in {
   environment.systemPackages = with pkgs; [
     mpvpaper
     amnezia-vpn
-    xray
     fastfetch
     obs-studio
     git
@@ -54,43 +53,5 @@ in {
     python-packages
     convertx
   ];
-
-  programs = {
-    steam = {
-      enable = true;
-      gamescopeSession.enable = false;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = false;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
-    };
-
-    amnezia-vpn = {
-      enable = true;
-    };
-
-    thunderbird = {
-      enable = true;
-    };
-  };
-
-  systemd.services = {
-    AmneziaVPN.path = with pkgs; [
-      amneziawg-go
-      amneziawg-tools
-    ];
-  };
-
-  services = {
-    v2raya = {
-      enable = true;
-      cliPackage = pkgs.xray;
-    };
-    fprintd = {
-      enable = false;
-      tod = {
-        enable = false;
-        driver = pkgs.libfprint-2-tod1-goodix;
-      };
-    };
-  };
+  
 }

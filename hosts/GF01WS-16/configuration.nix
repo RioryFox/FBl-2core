@@ -17,8 +17,11 @@ in {
     ../../modules/registry/ports.nix
     ../../modules/registry/network.nix
     ../../modules/registry/cache.nix
+
     ../../modules/services/ssh.nix
     ../../modules/services/gf-monitoring-exporters.nix
+    ../../modules/services/v2ray.nix
+
     ../../modules/cyber
     ../../modules/desktop/hyprland
 
@@ -31,6 +34,7 @@ in {
 
 
     ../../modules/programs/vscodium.nix
+    ../../modules/programs/steam.nix
   ];
 
   boot = {
