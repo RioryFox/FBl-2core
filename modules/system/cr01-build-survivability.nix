@@ -12,7 +12,7 @@
   # With 32 GiB RAM this creates roughly 8 GiB of compressed swap capacity.
   zramSwap = {
     enable = true;
-    memoryPercent = 25;
+    memoryPercent = 30;
     priority = 100;
   };
 
