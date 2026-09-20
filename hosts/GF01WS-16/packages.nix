@@ -1,13 +1,6 @@
-# 💫 https://github.com/JaKooLit 💫 #
-# Packages for this host only
-
-# packages-fonts.nix
-
-# packages-fonts.nix
 { lib, pkgs, ... }:
 
 let
-  # Определяем vk_api как Python-пакет
   myVkApi = pkgs.python3.pkgs.buildPythonPackage rec {
     pname = "vk_api";
     version = "11.10.0";
@@ -26,14 +19,12 @@ let
     };
   };
 
-  # Собираем все Python-пакеты в одно окружение
   python-packages = pkgs.python3.withPackages (ps: with ps; [
     requests
     pandas
     pyquery
     flask
     myVkApi
-    #pipx
   ]);
 
 in {
@@ -41,13 +32,10 @@ in {
 
   environment.systemPackages = with pkgs; [
     mpvpaper
-    amnezia-vpn
     fastfetch
-    obs-studio
     git
     winbox
     rclone
-    #pipx
     python3
     xauth
     python-packages

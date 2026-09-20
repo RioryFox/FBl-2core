@@ -5,27 +5,64 @@ let
 
   vscodiumFbl = pkgs.vscodium.overrideAttrs (old: {
     postInstall = (old.postInstall or "") + ''
-      css="$(find "$out" -name 'workbench.desktop.main.css' | head -n1)"
+      css="$(find "$out" -name 'workbench.desktop.main.css' -print -quit)"
+      product="$(find "$out" -path '*/resources/app/product.json' -print -quit)"
+
+      test -n "$css" || {
+        echo "FBL: workbench.desktop.main.css not found"
+        exit 1
+      }
+
+      test -n "$product" || {
+        echo "FBL: product.json not found"
+        exit 1
+      }
 
       cat >> "$css" <<EOF
 
-      /* FBL VSCodium background */
-      body,
-      .monaco-workbench {
-        background-image: url("file://${wallpaper}") !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-attachment: fixed !important;
-      }
+/* FBL VSCodium background */
+body,
+.monaco-workbench {
+  background-image: url("file://${wallpaper}") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
 
-      .part.editor,
-      .editor-group-container,
-      .monaco-editor,
-      .monaco-editor-background,
-      .margin {
-        background-color: transparent !important;
-      }
+.part.editor,
+.editor-group-container,
+.monaco-editor,
+.monaco-editor-background,
+.margin {
+  background-color: transparent !important;
+}
 EOF
+
+      # product.json stores the path relative to resources/app/out/
+      key="''${css#*/resources/app/out/}"
+
+      digest="$(
+        ${pkgs.openssl}/bin/openssl dgst -sha256 -binary "$css" \
+          | ${pkgs.coreutils}/bin/base64 \
+          | ${pkgs.coreutils}/bin/tr -d '=\n'
+      )"
+
+      ${pkgs.jq}/bin/jq \
+        --arg key "$key" \
+        --arg hash "$digest" \
+        '
+          if (.checksums[$key] // null) == null then
+            error("FBL: checksum key missing: " + $key)
+          else
+            .checksums[$key] = $hash
+          end
+        ' \
+        "$product" > "$product.tmp"
+
+      ${pkgs.coreutils}/bin/mv "$product.tmp" "$product"
+
+      echo "FBL: patched $key"
+      echo "FBL: updated checksum to $digest"
     '';
   });
 
