@@ -15,6 +15,4 @@ in
       acceleration = "cuda";
     };
   };
-
-  # Ollama is consumed locally by Open WebUI; no LAN firewall exposure needed.
 }

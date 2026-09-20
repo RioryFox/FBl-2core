@@ -54,8 +54,6 @@ in
     database.createLocally = true;
     configureRedis = true;
 
-    # Talk is used for family chat/file sharing. Calls/TURN/HPB are outside the
-    # current FBL scope.
     extraApps = {
       inherit (pkgs.nextcloud33Packages.apps) spreed;
     };
@@ -108,8 +106,6 @@ in
     unitConfig.RequiresMountsFor = [ cloudMount cloudMount02 ];
   };
 
-  # FBL_CLOUD02 is exposed to Nextcloud only through nextcloud-external/.
-  # There is deliberately no dependency on Jellyfin or its media tree.
   systemd.services.nextcloud-fbl-cloud02 = {
     description = "Register FBL_CLOUD02 in Nextcloud";
     wantedBy = [ "multi-user.target" ];
@@ -131,7 +127,3 @@ in
     '';
   };
 }
-
-# GPT-5.6 Sol изменил в 18:15 05.09.2026 (МСК).
-
-# [GPT-5.6 Sol] изменил в 00:43 13.09.2026 (МСК).

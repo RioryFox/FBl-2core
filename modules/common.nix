@@ -43,10 +43,6 @@
     wget
   ];
 
-  # Show a compact host summary only for interactive SSH shells. NixOS
-  # evaluates environment.interactiveShellInit for interactive shells, while
-  # SSH_CONNECTION keeps local terminals quiet and avoids scp/sftp/rsync and
-  # non-interactive remote commands.
   environment.interactiveShellInit = ''
     if [ -n "''${SSH_CONNECTION:-}" ] && command -v fastfetch >/dev/null 2>&1; then
       fastfetch

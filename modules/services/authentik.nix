@@ -160,5 +160,3 @@ in
       (config.services.authentik.enable && config.services.comfyui.enable)
       [ comfyFrontendPort ]);
 }
-
-# [GPT-5.6 Sol] изменил в 18:52 13.09.2026 (МСК).
