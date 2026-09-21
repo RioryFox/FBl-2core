@@ -29,8 +29,8 @@
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
 
     nixpkgsGF.url = "github:NixOS/nixpkgs/26.05";
-    nixpkgsGFFirmware.url = "github:NixOS/nixpkgs/26.05";
-    
+    nixpkgsGFFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
+
     home-manager = {
       url = "github:nix-community/home-manager/cbd8a72e5fe6af19d40e2741dc440d9227836860";
       inputs.nixpkgs.follows = "nixpkgsGF";
