@@ -28,7 +28,7 @@
     # packaged Authentik release.
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
 
-    nixpkgsGF.url = "github:NixOS/nixpkgs/26.05";
+    nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgsGFFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     home-manager = {
