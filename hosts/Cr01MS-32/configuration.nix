@@ -32,7 +32,7 @@ in
     ../../modules/cyber
     ../../modules/projects/vision.nix
     ../../modules/programs/steam.nix
-    inputs.microvm.nixosModules.host
+    #inputs.microvm.nixosModules.host
     #./ihf02-vm-host.nix
     #./ivn01-vm-host.nix
     #./iaf01-vm-host.nix
