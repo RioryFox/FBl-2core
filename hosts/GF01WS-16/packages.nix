@@ -40,7 +40,7 @@ in {
     xauth
     python-packages
     convertx
-    amnezia
+    amneziawg-go
   ];
   
 }
