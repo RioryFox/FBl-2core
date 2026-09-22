@@ -25,7 +25,7 @@ in
   ];
 
   services.authentik = {
-    enable = true;
+    enable = false;
     environmentFile = secretFile;
 
     # Keep every Authentik backend listener off the LAN. nginx is the only
