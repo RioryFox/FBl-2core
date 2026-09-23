@@ -41,6 +41,7 @@ in {
     python-packages
     convertx
     amneziawg-go
+    qbittorrent
   ];
   
 }
