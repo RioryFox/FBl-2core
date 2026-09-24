@@ -29,6 +29,10 @@ in
     "d /var/lib/fbl-secrets 0700 root root -"
   ];
 
+  users.groups.fbl-media = { };
+  users.users.nextcloud.extraGroups = [ "fbl-media" ];
+  users.users.homefox.extraGroups = [ "fbl-media" ];
+
   systemd.services.nextcloud-storage-prepare = {
     description = "Prepare FBL Cloud storage for Nextcloud";
     wantedBy = [ "multi-user.target" ];
@@ -39,10 +43,10 @@ in
       RemainAfterExit = true;
     };
     script = ''
-      ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${nextcloudData}
-      ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${nextcloudConfig}
-      ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${cloudExternal02}
-      ${pkgs.coreutils}/bin/chown nextcloud:nextcloud ${nextcloudData} ${nextcloudConfig} ${cloudExternal02}
+      ${pkgs.coreutils}/bin/install -d -m 0750 -o fbl-media -g fbl-media ${nextcloudData}
+      ${pkgs.coreutils}/bin/install -d -m 0750 -o fbl-media -g fbl-media ${nextcloudConfig}
+      ${pkgs.coreutils}/bin/install -d -m 0750 -o fbl-media -g fbl-media ${cloudExternal02}
+      ${pkgs.coreutils}/bin/chown fbl-media:fbl-media ${nextcloudData} ${nextcloudConfig} ${cloudExternal02}
     '';
   };
 

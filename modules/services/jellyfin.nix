@@ -2,7 +2,7 @@
 
 let
   cloudMount02 = config.fbl.storage.cloud02.mountPoint;
-  mediaRoot = "${cloudMount02}/nextcloud-external/";
+  mediaRoot = "${cloudMount02}";
   port = config.fbl.ports.tcp.jellyfin;
   runtimePort = config.fbl.ports.tcp.jellyfinRuntime;
   lanInterface = config.fbl.network.interfaces.cr01Lan;
