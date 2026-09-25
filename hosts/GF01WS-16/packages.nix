@@ -42,6 +42,8 @@ in {
     convertx
     amneziawg-go
     qbittorrent
+    dillo
+    browsh
   ];
   
 }
