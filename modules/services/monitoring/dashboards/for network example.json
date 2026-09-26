@@ -79,7 +79,7 @@
 {
         "id": PUT_HERE+1,
         "type": "stat",
-        "title": "URL_NAME | IP:IP_NAME",
+        "title": "URL_NAME | IP:443",
         "datasource": {
                 "type": "prometheus",
                 "uid": "fbl-prometheus"

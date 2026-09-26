@@ -2945,9 +2945,9 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "max(probe_success{job=\"external-http\",site=\"URL_NAME\"})",
+          "expr": "max(probe_success{job=\"external-http\",site=\"archive.org\"})",
           "instant": true,
-          "legendFormat": "URL_NAME",
+          "legendFormat": "archive.org",
           "range": false,
           "refId": "A"
         }
@@ -2956,7 +2956,7 @@
     {
       "id": 40,
       "type": "stat",
-      "title": "URL_NAME | IP:IP_NAME",
+      "title": "archive.org | IP:443",
       "datasource": {
         "type": "prometheus",
         "uid": "fbl-prometheus"
@@ -3023,7 +3023,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"URL_NAME\"})",
+          "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"archive.prg\"})",
           "instant": true,
           "legendFormat": "{{resolved_ip}}",
           "range": false,
@@ -3034,7 +3034,7 @@
     {
       "id": 41,
       "type": "stat",
-      "title": "URL_NAME | DNS",
+      "title": "archive.org | DNS",
       "datasource": {
         "type": "prometheus",
         "uid": "fbl-prometheus"
@@ -3101,9 +3101,9 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "max(fbl_dns_resolution_success{site=\"URL_NAME\"})",
+          "expr": "max(fbl_dns_resolution_success{site=\"archive.org\"})",
           "instant": true,
-          "legendFormat": "URL_NAME",
+          "legendFormat": "archive.org",
           "range": false,
           "refId": "A"
         }
