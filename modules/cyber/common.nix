@@ -7,7 +7,7 @@ with pkgs;
   # SECURITY / PENTEST
   # ─────────────────────────────────────────────
   aircrack-ng
-  hashcat
+  #hashcat
   arp-scan
   lynis
   nmap

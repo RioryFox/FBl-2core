@@ -7,18 +7,12 @@ let
   monitoringHost = config.fbl.network.hostLinks.cr01Ihf.host;
 in
 {
-  # iHF keeps only a lightweight Prometheus Agent. Long-term TSDB state,
   # blackbox probing and Grafana now live on Cr01MS-32.
   services.prometheus = {
     enable = true;
     enableAgentMode = true;
     listenAddress = "127.0.0.1";
     port = prometheusPort;
-
-    globalConfig = {
-      scrape_interval = "15s";
-      external_labels.fbl_host = "iHF02T-6";
-    };
 
     remoteWrite = [
       {
