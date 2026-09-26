@@ -18,12 +18,12 @@ in {
     ../../modules/registry/network.nix
     ../../modules/registry/cache.nix
 
-    ../../modules/services/ssh.nix
     ../../modules/services/gf-monitoring-exporters.nix
     ../../modules/services/v2ray.nix
 
     ../../modules/cyber
-    ../../modules/desktop/hyprland
+    ../../modules/common.nix
+    ../../modules/desktop/Hyprland
 
     ../../modules/hardware/amd-drivers.nix
     ../../modules/hardware/nvidia-drivers.nix
