@@ -35,6 +35,7 @@ in
       { host = "vk.ru"; url = "https://vk.ru"; group = "ru"; }
       { host = "mail.ru"; url = "https://mail.ru"; group = "ru"; }
       { host = "rutube.ru"; url = "https://rutube.ru"; group = "ru"; }
+      { host = "kino-kach.ru"; url = "https://https://kino-kach.ru/"; group = "ru"; }
 
       { host = "github.com"; url = "https://github.com"; group = "global"; }
       { host = "www.google.com"; url = "https://www.google.com"; group = "global"; }

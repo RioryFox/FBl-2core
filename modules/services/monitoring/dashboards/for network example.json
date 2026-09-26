@@ -1,234 +1,239 @@
-{
-        "id": PUT_HERE,
-        "type": "stat",
-        "title": "URL NAME| URL",
-        "datasource": {
-                "type": "prometheus",
-                "uid": "fbl-prometheus"
+[
+        {
+                "some-key-comment": "comments_comments"
         },
-        "gridPos": {
-                "h": 5,
-                "w": 3,
-                "x": 0,
-                "y": 5
-        },
-        "fieldConfig": {
-                "defaults": {
-                        "color": {
-                                "mode": "thresholds"
-                        },
-                        "mappings": [
-                                {
-                                        "type": "value",
-                                        "options": {
-                                                "0": {
-                                                        "text": "DOWN",
-                                                        "color": "red"
-                                                },
-                                                "1": {
-                                                        "text": "UP",
-                                                        "color": "green"
+        {
+                "id": "PUT_HERE",
+                "type": "stat",
+                "title": "URL NAME| URL",
+                "datasource": {
+                        "type": "prometheus",
+                        "uid": "fbl-prometheus"
+                },
+                "gridPos": {
+                        "h": 5,
+                        "w": 3,
+                        "x": 0,
+                        "y": 5
+                },
+                "fieldConfig": {
+                        "defaults": {
+                                "color": {
+                                        "mode": "thresholds"
+                                },
+                                "mappings": [
+                                        {
+                                                "type": "value",
+                                                "options": {
+                                                        "0": {
+                                                                "text": "DOWN",
+                                                                "color": "red"
+                                                        },
+                                                        "1": {
+                                                                "text": "UP",
+                                                                "color": "green"
+                                                        }
                                                 }
                                         }
-                                }
-                        ],
-                        "noValue": "NO DATA",
-                        "thresholds": {
-                                "mode": "absolute",
-                                "steps": [
-                                        {
-                                                "color": "red",
-                                                "value": null
-                                        },
-                                        {
-                                                "color": "green",
-                                                "value": 1
-                                        }
-                                ]
-                        }
-                },
-                "overrides": []
-        },
-        "options": {
-                "colorMode": "background",
-                "graphMode": "none",
-                "justifyMode": "center",
-                "orientation": "auto",
-                "reduceOptions": {
-                        "calcs": [
-                                "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
-                },
-                "showPercentChange": false,
-                "textMode": "value_and_name",
-                "wideLayout": true
-        },
-        "targets": [
-                {
-                        "editorMode": "code",
-                        "expr": "max(probe_success{job=\"external-http\",site=\"URL_NAME\"})",
-                        "instant": true,
-                        "legendFormat": "URL_NAME",
-                        "range": false,
-                        "refId": "A"
-                }
-        ]
-},
-{
-        "id": PUT_HERE+1,
-        "type": "stat",
-        "title": "URL_NAME | IP:443",
-        "datasource": {
-                "type": "prometheus",
-                "uid": "fbl-prometheus"
-        },
-        "gridPos": {
-                "h": 5,
-                "w": 4,
-                "x": 3,
-                "y": 5
-        },
-        "fieldConfig": {
-                "defaults": {
-                        "color": {
-                                "mode": "thresholds"
-                        },
-                        "mappings": [
-                                {
-                                        "type": "value",
-                                        "options": {
-                                                "0": {
-                                                        "text": "DOWN",
-                                                        "color": "red"
+                                ],
+                                "noValue": "NO DATA",
+                                "thresholds": {
+                                        "mode": "absolute",
+                                        "steps": [
+                                                {
+                                                        "color": "red",
+                                                        "value": null
                                                 },
-                                                "1": {
-                                                        "text": "UP",
-                                                        "color": "green"
+                                                {
+                                                        "color": "green",
+                                                        "value": 1
+                                                }
+                                        ]
+                                }
+                        },
+                        "overrides": []
+                },
+                "options": {
+                        "colorMode": "background",
+                        "graphMode": "none",
+                        "justifyMode": "center",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                                "calcs": [
+                                        "lastNotNull"
+                                ],
+                                "fields": "",
+                                "values": false
+                        },
+                        "showPercentChange": false,
+                        "textMode": "value_and_name",
+                        "wideLayout": true
+                },
+                "targets": [
+                        {
+                                "editorMode": "code",
+                                "expr": "max(probe_success{job=\"external-http\",site=\"URL_NAME\"})",
+                                "instant": true,
+                                "legendFormat": "URL_NAME",
+                                "range": false,
+                                "refId": "A"
+                        }
+                ]
+        },
+        {
+                "id": "PUT_HERE+1",
+                "type": "stat",
+                "title": "URL_NAME | IP:443",
+                "datasource": {
+                        "type": "prometheus",
+                        "uid": "fbl-prometheus"
+                },
+                "gridPos": {
+                        "h": 5,
+                        "w": 4,
+                        "x": 3,
+                        "y": 5
+                },
+                "fieldConfig": {
+                        "defaults": {
+                                "color": {
+                                        "mode": "thresholds"
+                                },
+                                "mappings": [
+                                        {
+                                                "type": "value",
+                                                "options": {
+                                                        "0": {
+                                                                "text": "DOWN",
+                                                                "color": "red"
+                                                        },
+                                                        "1": {
+                                                                "text": "UP",
+                                                                "color": "green"
+                                                        }
                                                 }
                                         }
-                                }
-                        ],
-                        "noValue": "NO DATA",
-                        "thresholds": {
-                                "mode": "absolute",
-                                "steps": [
-                                        {
-                                                "color": "red",
-                                                "value": null
-                                        },
-                                        {
-                                                "color": "green",
-                                                "value": 1
-                                        }
-                                ]
-                        }
-                },
-                "overrides": []
-        },
-        "options": {
-                "colorMode": "background",
-                "graphMode": "none",
-                "justifyMode": "center",
-                "orientation": "auto",
-                "reduceOptions": {
-                        "calcs": [
-                                "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
-                },
-                "showPercentChange": false,
-                "textMode": "value_and_name",
-                "wideLayout": true
-        },
-        "targets": [
-                {
-                        "editorMode": "code",
-                        "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"URL_NAME\"})",
-                        "instant": true,
-                        "legendFormat": "{{resolved_ip}}",
-                        "range": false,
-                        "refId": "A"
-                }
-        ]
-},
-{
-        "id": PUT_HERE+2,
-        "type": "stat",
-        "title": "URL_NAME | DNS",
-        "datasource": {
-                "type": "prometheus",
-                "uid": "fbl-prometheus"
-        },
-        "gridPos": {
-                "h": 5,
-                "w": 3,
-                "x": 7,
-                "y": 5
-        },
-        "fieldConfig": {
-                "defaults": {
-                        "color": {
-                                "mode": "thresholds"
-                        },
-                        "mappings": [
-                                {
-                                        "type": "value",
-                                        "options": {
-                                                "0": {
-                                                        "text": "DOWN",
-                                                        "color": "red"
+                                ],
+                                "noValue": "NO DATA",
+                                "thresholds": {
+                                        "mode": "absolute",
+                                        "steps": [
+                                                {
+                                                        "color": "red",
+                                                        "value": null
                                                 },
-                                                "1": {
-                                                        "text": "UP",
-                                                        "color": "green"
+                                                {
+                                                        "color": "green",
+                                                        "value": 1
+                                                }
+                                        ]
+                                }
+                        },
+                        "overrides": []
+                },
+                "options": {
+                        "colorMode": "background",
+                        "graphMode": "none",
+                        "justifyMode": "center",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                                "calcs": [
+                                        "lastNotNull"
+                                ],
+                                "fields": "",
+                                "values": false
+                        },
+                        "showPercentChange": false,
+                        "textMode": "value_and_name",
+                        "wideLayout": true
+                },
+                "targets": [
+                        {
+                                "editorMode": "code",
+                                "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"URL_NAME\"})",
+                                "instant": true,
+                                "legendFormat": "{{resolved_ip}}",
+                                "range": false,
+                                "refId": "A"
+                        }
+                ]
+        },
+        {
+                "id": "PUT_HERE+2",
+                "type": "stat",
+                "title": "URL_NAME | DNS",
+                "datasource": {
+                        "type": "prometheus",
+                        "uid": "fbl-prometheus"
+                },
+                "gridPos": {
+                        "h": 5,
+                        "w": 3,
+                        "x": 7,
+                        "y": 5
+                },
+                "fieldConfig": {
+                        "defaults": {
+                                "color": {
+                                        "mode": "thresholds"
+                                },
+                                "mappings": [
+                                        {
+                                                "type": "value",
+                                                "options": {
+                                                        "0": {
+                                                                "text": "DOWN",
+                                                                "color": "red"
+                                                        },
+                                                        "1": {
+                                                                "text": "UP",
+                                                                "color": "green"
+                                                        }
                                                 }
                                         }
+                                ],
+                                "noValue": "NO DATA",
+                                "thresholds": {
+                                        "mode": "absolute",
+                                        "steps": [
+                                                {
+                                                        "color": "red",
+                                                        "value": null
+                                                },
+                                                {
+                                                        "color": "green",
+                                                        "value": 1
+                                                }
+                                        ]
                                 }
-                        ],
-                        "noValue": "NO DATA",
-                        "thresholds": {
-                                "mode": "absolute",
-                                "steps": [
-                                        {
-                                                "color": "red",
-                                                "value": null
-                                        },
-                                        {
-                                                "color": "green",
-                                                "value": 1
-                                        }
-                                ]
+                        },
+                        "overrides": []
+                },
+                "options": {
+                        "colorMode": "background",
+                        "graphMode": "none",
+                        "justifyMode": "center",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                                "calcs": [
+                                        "lastNotNull"
+                                ],
+                                "fields": "",
+                                "values": false
+                        },
+                        "showPercentChange": false,
+                        "textMode": "value_and_name",
+                        "wideLayout": true
+                },
+                "targets": [
+                        {
+                                "editorMode": "code",
+                                "expr": "max(fbl_dns_resolution_success{site=\"URL_NAME\"})",
+                                "instant": true,
+                                "legendFormat": "URL_NAME",
+                                "range": false,
+                                "refId": "A"
                         }
-                },
-                "overrides": []
-        },
-        "options": {
-                "colorMode": "background",
-                "graphMode": "none",
-                "justifyMode": "center",
-                "orientation": "auto",
-                "reduceOptions": {
-                        "calcs": [
-                                "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
-                },
-                "showPercentChange": false,
-                "textMode": "value_and_name",
-                "wideLayout": true
-        },
-        "targets": [
-                {
-                        "editorMode": "code",
-                        "expr": "max(fbl_dns_resolution_success{site=\"URL_NAME\"})",
-                        "instant": true,
-                        "legendFormat": "URL_NAME",
-                        "range": false,
-                        "refId": "A"
-                }
-        ]
-}
+                ]
+        }
+]
