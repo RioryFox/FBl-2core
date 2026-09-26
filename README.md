@@ -19,3 +19,5 @@ https://github.com/JaKooLit/Hyprland-Dots.git   - хост GF01WS-16
 https://github.com/Athena-OS/athena-nix.git   - все хосты
 
 Разрабы выше заслуживают вашей звезды - если вам не трудно, прошу - поставьте звездочку им за тх работу, спасибо!
+
+Только сейчас увидел что киммитил под installer...
