@@ -147,8 +147,11 @@ in
             targets = [
               "1.1.1.1"
               "8.8.8.8"
+              "8.8.4.4"
               "9.9.9.9"
               "77.88.8.8"
+              "1.0.0.1"
+              "149.112.112.112"
             ];
           }
         ];
@@ -165,7 +168,10 @@ in
             targets = [
               "1.1.1.1:${toString dnsPort}"
               "8.8.8.8:${toString dnsPort}"
+              "8.8.4.4:${toString dnsPort}"
               "77.88.8.8:${toString dnsPort}"
+              "1.0.0.1:${toString dnsPort}"
+              "149.112.112.112:${toString dnsPort}"
             ];
           }
         ];
