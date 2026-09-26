@@ -5,12 +5,12 @@
     ./registry/ports.nix
     ./registry/network.nix
     ./registry/monitoring.nix
-    ./registry/storage.nix
     ./registry/cache.nix
     ./services/ssh.nix
   ];
 
-  time.timeZone = "Europe/Moscow";
+  #time.timeZone = "Europe/Moscow";
+  services.automatic-timezoned.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
