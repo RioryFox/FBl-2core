@@ -41,6 +41,7 @@ in
       { host = "www.youtube.com"; url = "https://www.youtube.com"; group = "global"; }
       { host = "www.wikipedia.org"; url = "https://www.wikipedia.org"; group = "global"; }
       { host = "telegram.org"; url = "https://telegram.org"; group = "global"; }
+      { host = "archive.org"; url = "https://archive.org"; group = "global"; }
 
       { host = "cloudflare.com"; url = "https://cloudflare.com"; group = "infra"; }
       { host = "example.com"; url = "https://example.com"; group = "infra"; }
