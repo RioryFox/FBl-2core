@@ -45,7 +45,7 @@ with pkgs;
   # ─────────────────────────────────────────────
   # FILESYSTEM / STORAGE
   # ─────────────────────────────────────────────
-  #file
+  file
   parted
   tree
 
@@ -76,7 +76,7 @@ with pkgs;
   openssl
   python3
   go
-  rust
+  rustc
 
   # ─────────────────────────────────────────────
   # EDITORS / FILE MANAGERS
