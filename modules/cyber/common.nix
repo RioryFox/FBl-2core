@@ -77,6 +77,7 @@ with pkgs;
   python3
   go
   rustc
+  cargo
 
   # ─────────────────────────────────────────────
   # EDITORS / FILE MANAGERS
