@@ -32,7 +32,6 @@ in {
 
   environment.systemPackages = with pkgs; [
     mpvpaper
-    fastfetch
     git
     winbox
     rclone
@@ -40,7 +39,6 @@ in {
     xauth
     python-packages
     convertx
-    amneziawg-go
     qbittorrent
     dillo
     browsh

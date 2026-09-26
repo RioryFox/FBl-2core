@@ -2,7 +2,7 @@
 
 Текущая версия: **0.9.1**.
 
-Единый NixOS flake Fox Byte Lab для `Cr01MS-32`, `GF01WS-16` и MicroVM - `iHF02T-6`, `iVN01T-2`, `iAF01T-8` на `Cr01MS-32`.
+Единый NixOS flake Fox Byte Lab для `Cr01MS-32`, `GF01WS-16` и временно отключенных MicroVM - `iHF02T-6`, `iVN01T-2`, `iAF01T-8` на `Cr01MS-32`.
 
 ## Политика редактирования
 

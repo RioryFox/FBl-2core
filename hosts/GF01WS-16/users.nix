@@ -50,7 +50,6 @@ in {
         firefox
         chromium
         librewolf
-        #vscodium
         dbeaver-bin
         esptool
         platformio

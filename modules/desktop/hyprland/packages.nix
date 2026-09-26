@@ -118,7 +118,6 @@
     git
     google-chrome
     gnome-system-monitor
-    fastfetch
     jq
     gcc
     gnumake

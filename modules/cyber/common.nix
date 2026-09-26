@@ -2,50 +2,94 @@
 
 with pkgs;
 [
+  #сортировка не идеальная, мб поменяется
+  # ─────────────────────────────────────────────
+  # SECURITY / PENTEST
+  # ─────────────────────────────────────────────
   aircrack-ng
+  hashcat
   arp-scan
-  btop
-  curl
+  lynis
+  nmap
+  testssl
+
+  # ─────────────────────────────────────────────
+  # NETWORK / DIAGNOSTICS
+  # ─────────────────────────────────────────────
   dig
+  httpie
+  inetutils
+  iperf3
+  iw
+  mtr
+  netcat-openbsd
+  tcpdump
+  traceroute
+  wavemon
+  whois
+
+  # ─────────────────────────────────────────────
+  # SYSTEM INFO / HARDWARE
+  # ─────────────────────────────────────────────
+  btop
+  htop
   dmidecode
-  fd
+  gpufetch
+  inxi
+  ipfetch
+  lm_sensors
+  lsof
+  pciutils
+  usbutils
+
+  # ─────────────────────────────────────────────
+  # FILESYSTEM / STORAGE
+  # ─────────────────────────────────────────────
   file
+  parted
+  tree
+
+  # ─────────────────────────────────────────────
+  # CLI / SHELL UTILITIES
+  # ─────────────────────────────────────────────
+  curl
+  fd
+  jq
+  ripgrep
+  wget
+  yq
+
+  # ─────────────────────────────────────────────
+  # ARCHIVE / TRANSFER / SYNC
+  # ─────────────────────────────────────────────
+  p7zip
+  unzip
+  rclone
+  rsync
+
+  # ─────────────────────────────────────────────
+  # DEVELOPMENT
+  # ─────────────────────────────────────────────
   gcc
   gh
   gnumake
-  htop
-  httpie
-  inetutils
-  inxi
-  iperf3
-  iw
-  jq
-  lm_sensors
-  lsof
-  lynis
-  mtr
-  nano
-  netcat-openbsd
-  nmap
   openssl
-  p7zip
-  parted
-  pciutils
   python3
-  rclone
-  ripgrep
-  rsync
-  screen
-  tcpdump
-  testssl
-  tmux
-  traceroute
-  tree
-  unzip
-  usbutils
+  go
+  rust
+
+  # ─────────────────────────────────────────────
+  # EDITORS / FILE MANAGERS
+  # ─────────────────────────────────────────────
+  mc
+  nano
   vim
-  wavemon
-  wget
-  whois
-  yq
+  yazi
+
+  # ───────────────────────────────────────────────
+  # TERMINAL / SESSION MANAGEMENT
+  # ─────────────────────────────────────────────
+  screen
+  tmux
 ]
+

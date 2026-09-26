@@ -14,6 +14,9 @@ in
     ./mirror-backup.nix
     ../../modules/common.nix
     ../../modules/system/cr01-build-survivability.nix
+    
+    #services
+
     ../../modules/services/nix-serve.nix
     ../../modules/services/ollama.nix
     ../../modules/services/open-webui.nix
@@ -27,15 +30,19 @@ in
     ../../modules/services/jellyfin.nix
     ../../modules/services/qbittorrent.nix
     ../../modules/services/metube.nix
+    ../../modules/services/gitea.nix
     ../../modules/services/searxng.nix
+    
+    #other modules
+
     ../../modules/desktop/fluxbox.nix
     ../../modules/cyber
-    ../../modules/projects/vision.nix
+    ../../modules/projects/esp.nix
+
+    #programs
+
+    ../../modules/programs/vscodium.nix
     ../../modules/programs/steam.nix
-    #inputs.microvm.nixosModules.host
-    #./ihf02-vm-host.nix
-    #./ivn01-vm-host.nix
-    #./iaf01-vm-host.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -60,13 +67,11 @@ in
   fbl.cache.extraSubstituters = [
     "https://comfyui.cachix.org?priority=15"
     "https://nix-community.cachix.org?priority=16"
-    #"https://cuda-maintainers.cachix.org?priority=17"
   ];
 
   fbl.cache.extraTrustedPublicKeys = [
     "comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    #"cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
   ];
 
   networking.hostName = "Cr01MS-32";
@@ -86,9 +91,6 @@ in
       }
     ];
   };
-  networking.interfaces."vm-ihf02".useDHCP = false;
-  networking.interfaces."vm-ivn01".useDHCP = false;
-  networking.interfaces."vm-iaf01".useDHCP = false;
   networking.defaultGateway = {
     address = lanGateway;
     interface = lanInterface;
@@ -99,7 +101,7 @@ in
     then [ sshPort ]
     else [ ];
 
-  cyber = {
+  cyber = {  #Really need this on CR01???
     enable = true;
     role = "student";
   };
@@ -117,12 +119,6 @@ in
     hashedPassword = "$6$5Bm9ZYDSIhvH4gI9$5uKVHeI12NHmydVjEtEGqsiQtbe08OPX.0Pii3NKblqZMgTFzD6KeIUAY5X82SZfxj4oEyLAWyJLtnCCT.cIG0";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      fastfetch
-      gpufetch
-      ipfetch
-      mc
-      tree
-      yazi
     ];
   };
 
