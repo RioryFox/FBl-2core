@@ -2878,7 +2878,7 @@
     {
       "id": 39,
       "type": "stat",
-      "title": "URL NAME| URL",
+      "title": "archive.org | URL",
       "datasource": {
         "type": "prometheus",
         "uid": "fbl-prometheus"
