@@ -3023,7 +3023,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"archive.prg\"})",
+          "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"archive.org\"})",
           "instant": true,
           "legendFormat": "{{resolved_ip}}",
           "range": false,
