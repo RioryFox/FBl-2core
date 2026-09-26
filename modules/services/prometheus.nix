@@ -11,9 +11,6 @@ let
   familyGateway = config.fbl.network.upstream.familyGateway;
   upstreamDns = config.fbl.network.upstream.dns;
   lanInterface = config.fbl.network.interfaces.cr01Lan;
-  ihfHostInterface = config.fbl.network.interfaces.cr01IhfHost;
-  ivnHostInterface = config.fbl.network.interfaces.cr01IvnHost;
-  iafHostInterface = config.fbl.network.interfaces.cr01IafHost;
 
   blackboxRelabel = [
     {
@@ -180,11 +177,5 @@ in
   # The receiver is reachable only on the FBL LAN and private Cr01<->MicroVM
   # links. Blackbox and local hardware exporters stay loopback-only.
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
-    if config.services.prometheus.enable then [ port ] else [ ];
-  networking.firewall.interfaces.${ihfHostInterface}.allowedTCPPorts =
-    if config.services.prometheus.enable then [ port ] else [ ];
-  networking.firewall.interfaces.${ivnHostInterface}.allowedTCPPorts =
-    if config.services.prometheus.enable then [ port ] else [ ];
-  networking.firewall.interfaces.${iafHostInterface}.allowedTCPPorts =
     if config.services.prometheus.enable then [ port ] else [ ];
 }

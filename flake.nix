@@ -1,5 +1,5 @@
 {
-  description = "FBl-2core — FBL-Core plus GF01WS-16, iHF02T-6, iVN01T-2 and iAF01T-8 MicroVMs on Cr01MS-32";
+  description = "FBl-2core — FBL-Core for  GF01WS-16 and Cr01MS-32";
 
   # Bootstrap cache hints: these apply while evaluating/building this flake,
   # before a new NixOS generation can persist the same Cr01 host settings.
@@ -98,42 +98,6 @@
       Cr01MS-32 = mkCoreHost {
         imports = [
           ./hosts/Cr01MS-32/configuration.nix
-        ];
-      };
-
-      # Standalone build target for validation/debugging of the guest.
-      # Production autostart is owned by Cr01MS-32 via microvm.vms.iHF02T-6.
-      iHF02T-6-VM = nixpkgs.lib.nixosSystem {
-        inherit system;
-        pkgs = corePkgs;
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.microvm.nixosModules.microvm
-          ./hosts/iHF02T-6/vm.nix
-        ];
-      };
-
-      # Standalone build target for the VPN MicroVM.
-      # Production autostart is owned by Cr01MS-32 via microvm.vms.iVN01T-2.
-      iVN01T-2-VM = nixpkgs.lib.nixosSystem {
-        inherit system;
-        pkgs = corePkgs;
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.microvm.nixosModules.microvm
-          ./hosts/iVN01T-2/vm.nix
-        ];
-      };
-
-      # Standalone build target for the Azure Fox workstation MicroVM.
-      # Production autostart is owned by Cr01MS-32 via microvm.vms.iAF01T-8.
-      iAF01T-8-VM = nixpkgs.lib.nixosSystem {
-        inherit system;
-        pkgs = corePkgs;
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.microvm.nixosModules.microvm
-          ./hosts/iAF01T-8/vm.nix
         ];
       };
 

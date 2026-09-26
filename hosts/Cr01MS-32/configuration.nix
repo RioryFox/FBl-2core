@@ -119,6 +119,7 @@ in
     hashedPassword = "$6$5Bm9ZYDSIhvH4gI9$5uKVHeI12NHmydVjEtEGqsiQtbe08OPX.0Pii3NKblqZMgTFzD6KeIUAY5X82SZfxj4oEyLAWyJLtnCCT.cIG0";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      smartmontools
     ];
   };
 
