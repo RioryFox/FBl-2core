@@ -10,6 +10,7 @@ let
 in
 {
   imports = [
+    #hardware and storage configs
     ./hardware-configuration.nix
     ./mirror-backup.nix
     ./storage.nix
