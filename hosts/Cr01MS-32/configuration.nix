@@ -29,7 +29,7 @@ in
     ../../modules/services/network-diagnostics.nix
     ../../modules/services/grafana.nix
     ../../modules/services/nextcloud.nix
-    ../../modules/services/jellyfin.nix
+    #../../modules/services/jellyfin.nix пока выключу
     ../../modules/services/qbittorrent.nix
     ../../modules/services/metube.nix
     ../../modules/services/gitea.nix
