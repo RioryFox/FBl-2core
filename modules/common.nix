@@ -3,7 +3,6 @@
 {
   imports = [
     ./registry/ports.nix
-    ./registry/network.nix
     ./registry/monitoring.nix
     ./registry/cache.nix
     ./services/ssh.nix
