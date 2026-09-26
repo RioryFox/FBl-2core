@@ -23,7 +23,7 @@ in {
 
     ../../modules/cyber
     ../../modules/common.nix
-    ../../modules/desktop/Hyprland
+    ../../modules/desktop/hyprland
 
     ../../modules/hardware/amd-drivers.nix
     ../../modules/hardware/nvidia-drivers.nix
@@ -103,23 +103,6 @@ in {
     hostName = "GF01WS-16";
     networkmanager.enable = true;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
-  };
-
-  services.automatic-timezoned.enable = true;
-
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_ADDRESS = "en_US.UTF-8";
-      LC_IDENTIFICATION = "en_US.UTF-8";
-      LC_MEASUREMENT = "en_US.UTF-8";
-      LC_MONETARY = "en_US.UTF-8";
-      LC_NAME = "en_US.UTF-8";
-      LC_NUMERIC = "en_US.UTF-8";
-      LC_PAPER = "en_US.UTF-8";
-      LC_TELEPHONE = "en_US.UTF-8";
-      LC_TIME = "en_US.UTF-8";
-    };
   };
 
   services = {
