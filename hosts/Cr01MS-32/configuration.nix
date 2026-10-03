@@ -69,8 +69,8 @@ in
   # Keeping these host-scoped avoids widening the trust surface on FBL nodes
   # that do not consume ComfyUI/CUDA artifacts.
   fbl.cache.extraSubstituters = [
-    "https://comfyui.cachix.org?priority=15"
-    "https://nix-community.cachix.org?priority=16"
+    "https://comfyui.cachix.org?priority=16"
+    "https://nix-community.cachix.org?priority=15"
   ];
 
   fbl.cache.extraTrustedPublicKeys = [
