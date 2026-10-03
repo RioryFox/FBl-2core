@@ -31,10 +31,7 @@ let
     amnezia-vpn
   ];
 
-in {
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
+  StablePackages = with pkgs; [
     mpvpaper
     git
     winbox
@@ -47,5 +44,12 @@ in {
     dillo
     browsh
   ];
+
+in {
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = 
+    StablePackages
+    ++ UnstablePackages;
   
 }
