@@ -27,11 +27,11 @@ let
     myVkApi
   ]);
 
-  UnstablePackages = with UnstablePackages; [
+  unstablePackages = with pkgsUnstable; [
     amnezia-vpn
   ];
-
-  StablePackages = with pkgs; [
+  
+  stablePackages = with pkgs; [
     mpvpaper
     git
     winbox
@@ -49,7 +49,7 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = 
-    StablePackages
-    ++ UnstablePackages;
+    stablePackages
+    ++ unstablePackages;
   
 }
