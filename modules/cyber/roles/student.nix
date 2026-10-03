@@ -27,7 +27,6 @@ with pkgs;
   mitmproxy
   nasm
   nikto
-  nmap
   payloadsallthethings
   proxychains-ng
   pwncat

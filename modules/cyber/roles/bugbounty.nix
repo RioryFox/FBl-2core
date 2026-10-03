@@ -38,7 +38,6 @@ with pkgs;
   metasploit
   naabu
   nikto
-  nmap
   nosqli
   nuclei
   psudohash

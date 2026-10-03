@@ -1,4 +1,5 @@
 { pkgs, ... }:
+#Тут я добавляю еще 1 прогу для эскпериментов
 
 let
   wallpaper = ../../assets/vscodium-wallpapers/test.png;

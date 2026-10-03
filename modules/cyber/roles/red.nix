@@ -215,7 +215,6 @@ with pkgs;
   ngrep
   ngrok
   nikto
-  nmap
   nosqli
   ntlmrecon
   nuclei

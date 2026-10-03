@@ -34,7 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgsGF";
     };
 
-    #nixvim.url = "github:nix-community/nixvim/51abc532525e486176f9a7b24b17908c60017b54";
     alejandra.url = "github:kamadorueda/alejandra/8f47c5e82ee8e6e8adcc1748be0056a1e349f7e8";
 
     microvm = {

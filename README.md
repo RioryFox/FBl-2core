@@ -16,7 +16,7 @@
 
 Применялись для вдохновления:
 https://github.com/JaKooLit/Hyprland-Dots.git   - хост GF01WS-16 
-https://github.com/Athena-OS/athena-nix.git   - все хосты
+https://github.com/Athena-OS/athena-nix.git   - все хосты кому нужен кибербез
 
 Разрабы выше заслуживают вашей звезды - если вам не трудно, прошу - поставьте звездочку им за тх работу, спасибо!
 

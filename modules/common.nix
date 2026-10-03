@@ -31,15 +31,74 @@
     curl
     git
     hyfetch
-    jq
     fastfetch
+    jq
     nano
+    vim
+    mc
+    yazi
     nmap
     rclone
     restic
     rsync
-    tree
     wget
+
+    # ─────────────────────────────────────────────
+    # DEVELOPMENT
+    # ─────────────────────────────────────────────
+    gcc
+    gh
+    gnumake
+    openssl
+    python3
+    go
+    rustc
+    cargo
+
+    # ─────────────────────────────────────────────
+    # ARCHIVE / TRANSFER / SYNC
+    # ─────────────────────────────────────────────
+    p7zip
+    unzip
+    rclone
+    rsync
+
+    # ───────────────────────────────────────────────
+    # TERMINAL / SESSION MANAGEMENT
+    # ─────────────────────────────────────────────
+    screen
+    tmux
+
+    # ─────────────────────────────────────────────
+    # CLI / SHELL UTILITIES
+    # ─────────────────────────────────────────────
+    curl
+    fd
+    jq
+    ripgrep
+    wget
+    yq
+
+    # ─────────────────────────────────────────────
+    # FILESYSTEM / STORAGE
+    # ─────────────────────────────────────────────
+    file
+    parted
+    tree
+
+    # ─────────────────────────────────────────────
+    # SYSTEM INFO / HARDWARE
+    # ─────────────────────────────────────────────
+    btop
+    htop
+    dmidecode
+    gpufetch
+    inxi
+    ipfetch
+    lm_sensors
+    lsof
+    pciutils
+    usbutils  
   ];
 
   environment.interactiveShellInit = ''
