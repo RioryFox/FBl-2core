@@ -10,12 +10,12 @@ let
 in
 {
   imports = [
-    
+
     #hardware and storage configs
     ./hardware-configuration.nix
     ./mirror-backup.nix
     ./storage.nix
-    ./network.nix
+    ../../modules/registry/network.nix
     ../../modules/common.nix
     ../../modules/system/cr01-build-survivability.nix
     
