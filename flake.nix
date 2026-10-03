@@ -29,6 +29,8 @@
     nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgsGFFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/cbd8a72e5fe6af19d40e2741dc440d9227836860";
       inputs.nixpkgs.follows = "nixpkgsGF";
@@ -66,6 +68,7 @@
 
   outputs = inputs @ {
     nixpkgs,
+    nixpkgsUnstable,
     nixpkgsGF,
     alejandra,
     ...
@@ -89,6 +92,11 @@
       inherit system;
       config.allowUnfree = true;
     };
+
+    UnstablePkgs = import nixpkgsUnstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     packages.${system}.waybar-weather =
       gfPkgs.callPackage ./pkgs/waybar-weather.nix {};
@@ -106,6 +114,8 @@
           inherit inputs system;
           host = "GF01WS-16";
           username = "rioryfox";
+
+          pkgsUnstable = UnstablePkgs;
         };
         modules = [ ./hosts/GF01WS-16/configuration.nix ];
       };

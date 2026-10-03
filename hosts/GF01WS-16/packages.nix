@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, pkgsUnstable, ... }:
 
 let
   myVkApi = pkgs.python3.pkgs.buildPythonPackage rec {
@@ -26,6 +26,10 @@ let
     flask
     myVkApi
   ]);
+
+  UnstablePackages = with UnstablePackages; [
+    amnezia-vpn
+  ];
 
 in {
   nixpkgs.config.allowUnfree = true;
