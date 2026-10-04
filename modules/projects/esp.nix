@@ -9,6 +9,6 @@
     v4l-utils
     picocom
     #opencod
-    gcc-arm-embadded
+    #gcc-arm-embadded
   ];
 }
