@@ -7,5 +7,8 @@
     ffmpeg
     platformio
     v4l-utils
+    picocom
+    opencod
+    gcc-arm-embadded
   ];
 }
