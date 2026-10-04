@@ -8,7 +8,7 @@
     platformio
     v4l-utils
     picocom
-    opencod
+    #opencod
     gcc-arm-embadded
   ];
 }
