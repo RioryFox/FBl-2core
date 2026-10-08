@@ -42,6 +42,7 @@
     restic
     rsync
     wget
+    kpcli
 
     # ─────────────────────────────────────────────
     # DEVELOPMENT
