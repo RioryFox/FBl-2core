@@ -21,11 +21,7 @@
     # CUDA/PyTorch runtime stays on the upstream-tested dependency set.
     comfyui-nix.url = "github:utensils/comfyui-nix/5e6d5155d302a015645164d195a6ad79f00ed43a";
 
-    # Authentik is pinned independently. Do not make its nixpkgs follow FBL
-    # core nixpkgs: authentik-nix carries a tested dependency set for the
-    # packaged Authentik release.
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
-
     nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgsGFFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
 
