@@ -32,7 +32,7 @@
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/cbd8a72e5fe6af19d40e2741dc440d9227836860";
+      url = "github:nix-community/home-manager/release-26.05";  #cbd8a72e5fe6af19d40e2741dc440d9227836860";
       inputs.nixpkgs.follows = "nixpkgsGF";
     };
 
