@@ -89,7 +89,7 @@
     "catppuccin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgsGF"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -257,7 +257,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgsGF"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -283,11 +283,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1791472515,
-        "narHash": "sha256-U9djtZHWp7NmK4umatdJaS11cgAUDtWPsAx4iljkcRY=",
+        "lastModified": 1791551030,
+        "narHash": "sha256-jTx3O3MKqPjv+cDfBFQ5zlKECBEwzF91scC+mSumZyE=",
         "owner": "microvm-nix",
         "repo": "microvm.nix",
-        "rev": "45c1f41ed587b0be10afeb7c253b68f6d9dfff68",
+        "rev": "f13928fe9900e91709d7ce581eefa47eaafa79e1",
         "type": "github"
       },
       "original": {
@@ -339,38 +339,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixpkgsGF": {
-      "locked": {
-        "lastModified": 1791426274,
-        "narHash": "sha256-MWhktfFtFE8Jl7bf9Pkp7TR5MSdYCjCswSo0Gkb4ywc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-26.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgsGFFirmware": {
-      "locked": {
-        "lastModified": 1791426274,
-        "narHash": "sha256-MWhktfFtFE8Jl7bf9Pkp7TR5MSdYCjCswSo0Gkb4ywc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-26.05",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -507,7 +475,7 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgsGF"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -535,8 +503,6 @@
         "home-manager": "home-manager",
         "microvm": "microvm",
         "nixpkgs": "nixpkgs_5",
-        "nixpkgsGF": "nixpkgsGF",
-        "nixpkgsGFFirmware": "nixpkgsGFFirmware",
         "nixpkgsUnstable": "nixpkgsUnstable",
         "quickshell": "quickshell",
         "tabby-terminal": "tabby-terminal"
@@ -608,7 +574,7 @@
     "tabby-terminal": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgsGF"
+          "nixpkgs"
         ]
       },
       "locked": {

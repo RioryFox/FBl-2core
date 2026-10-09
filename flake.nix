@@ -23,7 +23,7 @@
 
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
     #nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
-    nixpkgsFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
+    #nixpkgsFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
