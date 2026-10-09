@@ -22,14 +22,14 @@
     comfyui-nix.url = "github:utensils/comfyui-nix/5e6d5155d302a015645164d195a6ad79f00ed43a";
 
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
-    nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
-    nixpkgsGFFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
+    #nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgsFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";  #cbd8a72e5fe6af19d40e2741dc440d9227836860";
-      inputs.nixpkgs.follows = "nixpkgsGF";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     alejandra.url = "github:kamadorueda/alejandra/8f47c5e82ee8e6e8adcc1748be0056a1e349f7e8";
@@ -48,24 +48,23 @@
 
     catppuccin = {
       url = "github:catppuccin/nix/5e9efb97caeffea3bf248023b6d8b68e63b839b9";
-      inputs.nixpkgs.follows = "nixpkgsGF";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?rev=1e4d804e7f3fa7465811030e8da2bf10d544426a";
-      inputs.nixpkgs.follows = "nixpkgsGF";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     tabby-terminal = {
       url = "path:./pkgs/tabby-terminal-flake";
-      inputs.nixpkgs.follows = "nixpkgsGF";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = inputs @ {
     nixpkgs,
     nixpkgsUnstable,
-    nixpkgsGF,
     alejandra,
     ...
   }: let
@@ -84,7 +83,7 @@
         modules = [ module ];
       };
 
-    gfPkgs = import nixpkgsGF {
+    gfPkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
@@ -104,7 +103,7 @@
         ];
       };
 
-      GF01WS-16 = nixpkgsGF.lib.nixosSystem {
+      GF01WS-16 = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit inputs system;
