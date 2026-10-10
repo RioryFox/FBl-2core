@@ -18,7 +18,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";  #cbd8a72e5fe6af19d40e2741dc440d9227836860";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -42,7 +42,7 @@
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix/5e9efb97caeffea3bf248023b6d8b68e63b839b9";
+      url = "github:catppuccin/nix/release-26.05"; #5e9efb97caeffea3bf248023b6d8b68e63b839b9";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -78,18 +78,13 @@
         modules = [ module ];
       };
 
-    gfPkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-
     UnstablePkgs = import nixpkgsUnstable {
       inherit system;
       config.allowUnfree = true;
     };
   in {
     packages.${system}.waybar-weather =
-      gfPkgs.callPackage ./pkgs/waybar-weather.nix {};
+      corePkgs.callPackage ./pkgs/waybar-weather.nix {};
 
     nixosConfigurations = {
       Cr01MS-32 = mkCoreHost {

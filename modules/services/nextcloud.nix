@@ -7,7 +7,7 @@ let
   cloud02Uuid = config.fbl.storage.cloud02.uuid;
   nextcloudData = "${cloudMount}/nextcloud";
   nextcloudConfig = "${nextcloudData}/config";
-  cloudExternal02 = "${cloudMount02}/nextcloud-external";
+  cloudExternal02 = "${cloudMount02}/Movies";
   adminPassFile = "/var/lib/fbl-secrets/nextcloud-admin-pass";
   address = config.fbl.network.hosts.cr01;
   familyGateway = config.fbl.network.upstream.familyGateway;

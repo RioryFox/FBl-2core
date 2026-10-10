@@ -24,9 +24,6 @@
     exec /run/current-system/sw/bin/tabby-terminal "$@"
   '';
 
-  # WinBox 4 is 64-bit. The old GF01 ~/.wine prefix is 32-bit, so the unwrapped
-  # package exits before showing a window. Keep that prefix untouched and give
-  # WinBox its own 64-bit prefix instead.
   winboxGF01 = pkgs.writeShellScriptBin "winbox" ''
     export WINEPREFIX="$HOME/.local/share/winbox/wineprefix"
     export WINEARCH=win64
@@ -67,8 +64,6 @@ in {
     categories = ["Network" "RemoteAccess"];
   };
 
-  # This is the single GF01 user-default file consumed by the existing
-  # Hyprland Keybinds.conf. SUPER+Return expands $term from here.
   home.file.".config/hypr/UserConfigs/01-UserDefaults.conf".text = ''
     # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 
