@@ -7,7 +7,8 @@ let
   cloud02Uuid = config.fbl.storage.cloud02.uuid;
   nextcloudData = "${cloudMount}/nextcloud";
   nextcloudConfig = "${nextcloudData}/config";
-  cloudExternal02 = "${cloudMount02}/Movies";
+  cloudExternal02 = "${cloudMount02}/nextcloud-external";
+  movies = "${cloudMount02}/Movies";
   adminPassFile = "/var/lib/fbl-secrets/nextcloud-admin-pass";
   address = config.fbl.network.hosts.cr01;
   familyGateway = config.fbl.network.upstream.familyGateway;
@@ -43,6 +44,11 @@ in
       ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${nextcloudConfig}
       ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${cloudExternal02}
       ${pkgs.coreutils}/bin/chown nextcloud:nextcloud ${nextcloudData} ${nextcloudConfig} ${cloudExternal02}
+      
+      ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${movies}
+      ${pkgs.coreutils}/bin/setfacl -m u:jellyfin:--x ${cloudExternal02}
+      ${pkgs.coreutils}/bin/setfacl -R -m u:jellyfin:rX ${movies}
+      ${pkgs.coreutils}/bin/find ${movies} -exec ${pkgs.acl}/bin/setfacl -m d:u:jellyfin:rx {} +
     '';
   };
 

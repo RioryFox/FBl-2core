@@ -37,9 +37,9 @@ in
       Type = "oneshot";
       RemainAfterExit = true;
     };
+    #${pkgs.coreutils}/bin/install -d -m 2775 -o root -g fbl-media ${mediaRoot}/Movies
     script = ''
       ${pkgs.coreutils}/bin/install -d -m 2775 -o root -g fbl-media ${mediaRoot}
-      ${pkgs.coreutils}/bin/install -d -m 2775 -o root -g fbl-media ${mediaRoot}/Movies
       ${pkgs.coreutils}/bin/install -d -m 2775 -o root -g fbl-media ${mediaRoot}/Series
       ${pkgs.coreutils}/bin/install -d -m 2775 -o root -g fbl-media ${mediaRoot}/HomeVideo
       ${pkgs.coreutils}/bin/install -d -m 2775 -o root -g fbl-media ${mediaRoot}/Education
