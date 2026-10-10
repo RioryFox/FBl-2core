@@ -3413,7 +3413,7 @@
                 "targets": [
                         {
                                 "editorMode": "code",
-                                "expr": "max(probe_success{job=\"external-http\",site=\"URL_NAME\"})",
+                                "expr": "max(probe_success{job=\"external-http\",site=\"bruce.computer\"})",
                                 "instant": true,
                                 "legendFormat": "bruce.computer",
                                 "range": false,
@@ -3491,7 +3491,7 @@
                 "targets": [
                         {
                                 "editorMode": "code",
-                                "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"URL_NAME\"})",
+                                "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"bruce.computer\"})",
                                 "instant": true,
                                 "legendFormat": "{{resolved_ip}}",
                                 "range": false,
@@ -3502,7 +3502,7 @@
         {
                 "id": "48",
                 "type": "stat",
-                "title": "bruce.computer | DNS",
+                "title": "bruce.computer| DNS",
                 "datasource": {
                         "type": "prometheus",
                         "uid": "fbl-prometheus"
@@ -3569,7 +3569,7 @@
                 "targets": [
                         {
                                 "editorMode": "code",
-                                "expr": "max(fbl_dns_resolution_success{site=\"URL_NAME\"})",
+                                "expr": "max(fbl_dns_resolution_success{site=\"bruce.computer\"})",
                                 "instant": true,
                                 "legendFormat": "bruce.computer",
                                 "range": false,
