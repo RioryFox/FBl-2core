@@ -3344,239 +3344,239 @@
       ]
     },
     {
-                "id": "45",
-                "type": "stat",
-                "title": "bruce.computer| URL",
-                "datasource": {
-                        "type": "prometheus",
-                        "uid": "fbl-prometheus"
+      "id": "45",
+      "type": "stat",
+      "title": "bruce.computer| URL",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fbl-prometheus"
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 0,
+        "y": 40
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
                 },
-                "gridPos": {
-                        "h": 5,
-                        "w": 3,
-                        "x": 0,
-                        "y": 40
-                },
-                "fieldConfig": {
-                        "defaults": {
-                                "color": {
-                                        "mode": "thresholds"
-                                },
-                                "mappings": [
-                                        {
-                                                "type": "value",
-                                                "options": {
-                                                        "0": {
-                                                                "text": "DOWN",
-                                                                "color": "red"
-                                                        },
-                                                        "1": {
-                                                                "text": "UP",
-                                                                "color": "green"
-                                                        }
-                                                }
-                                        }
-                                ],
-                                "noValue": "NO DATA",
-                                "thresholds": {
-                                        "mode": "absolute",
-                                        "steps": [
-                                                {
-                                                        "color": "red",
-                                                        "value": null
-                                                },
-                                                {
-                                                        "color": "green",
-                                                        "value": 1
-                                                }
-                                        ]
-                                }
-                        },
-                        "overrides": []
-                },
-                "options": {
-                        "colorMode": "background",
-                        "graphMode": "none",
-                        "justifyMode": "center",
-                        "orientation": "auto",
-                        "reduceOptions": {
-                                "calcs": [
-                                        "lastNotNull"
-                                ],
-                                "fields": "",
-                                "values": false
-                        },
-                        "showPercentChange": false,
-                        "textMode": "value_and_name",
-                        "wideLayout": true
-                },
-                "targets": [
-                        {
-                                "editorMode": "code",
-                                "expr": "max(probe_success{job=\"external-http\",site=\"bruce.computer\"})",
-                                "instant": true,
-                                "legendFormat": "bruce.computer",
-                                "range": false,
-                                "refId": "A"
-                        }
-                ]
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                }
+              }
+            }
+          ],
+          "noValue": "NO DATA",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
         },
-        {
-                "id": "46",
-                "type": "stat",
-                "title": "bruce.computer | IP:443",
-                "datasource": {
-                        "type": "prometheus",
-                        "uid": "fbl-prometheus"
-                },
-                "gridPos": {
-                        "h": 5,
-                        "w": 4,
-                        "x": 3,
-                        "y": 40
-                },
-                "fieldConfig": {
-                        "defaults": {
-                                "color": {
-                                        "mode": "thresholds"
-                                },
-                                "mappings": [
-                                        {
-                                                "type": "value",
-                                                "options": {
-                                                        "0": {
-                                                                "text": "DOWN",
-                                                                "color": "red"
-                                                        },
-                                                        "1": {
-                                                                "text": "UP",
-                                                                "color": "green"
-                                                        }
-                                                }
-                                        }
-                                ],
-                                "noValue": "NO DATA",
-                                "thresholds": {
-                                        "mode": "absolute",
-                                        "steps": [
-                                                {
-                                                        "color": "red",
-                                                        "value": null
-                                                },
-                                                {
-                                                        "color": "green",
-                                                        "value": 1
-                                                }
-                                        ]
-                                }
-                        },
-                        "overrides": []
-                },
-                "options": {
-                        "colorMode": "background",
-                        "graphMode": "none",
-                        "justifyMode": "center",
-                        "orientation": "auto",
-                        "reduceOptions": {
-                                "calcs": [
-                                        "lastNotNull"
-                                ],
-                                "fields": "",
-                                "values": false
-                        },
-                        "showPercentChange": false,
-                        "textMode": "value_and_name",
-                        "wideLayout": true
-                },
-                "targets": [
-                        {
-                                "editorMode": "code",
-                                "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"bruce.computer\"})",
-                                "instant": true,
-                                "legendFormat": "{{resolved_ip}}",
-                                "range": false,
-                                "refId": "A"
-                        }
-                ]
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "targets": [
         {
-                "id": "48",
-                "type": "stat",
-                "title": "bruce.computer| DNS",
-                "datasource": {
-                        "type": "prometheus",
-                        "uid": "fbl-prometheus"
-                },
-                "gridPos": {
-                        "h": 5,
-                        "w": 3,
-                        "x": 7,
-                        "y": 40
-                },
-                "fieldConfig": {
-                        "defaults": {
-                                "color": {
-                                        "mode": "thresholds"
-                                },
-                                "mappings": [
-                                        {
-                                                "type": "value",
-                                                "options": {
-                                                        "0": {
-                                                                "text": "DOWN",
-                                                                "color": "red"
-                                                        },
-                                                        "1": {
-                                                                "text": "UP",
-                                                                "color": "green"
-                                                        }
-                                                }
-                                        }
-                                ],
-                                "noValue": "NO DATA",
-                                "thresholds": {
-                                        "mode": "absolute",
-                                        "steps": [
-                                                {
-                                                        "color": "red",
-                                                        "value": null
-                                                },
-                                                {
-                                                        "color": "green",
-                                                        "value": 1
-                                                }
-                                        ]
-                                }
-                        },
-                        "overrides": []
-                },
-                "options": {
-                        "colorMode": "background",
-                        "graphMode": "none",
-                        "justifyMode": "center",
-                        "orientation": "auto",
-                        "reduceOptions": {
-                                "calcs": [
-                                        "lastNotNull"
-                                ],
-                                "fields": "",
-                                "values": false
-                        },
-                        "showPercentChange": false,
-                        "textMode": "value_and_name",
-                        "wideLayout": true
-                },
-                "targets": [
-                        {
-                                "editorMode": "code",
-                                "expr": "max(fbl_dns_resolution_success{site=\"bruce.computer\"})",
-                                "instant": true,
-                                "legendFormat": "bruce.computer",
-                                "range": false,
-                                "refId": "A"
-                        }
-                ]
+          "editorMode": "code",
+          "expr": "max(probe_success{job=\"external-http\",site=\"bruce.computer\"})",
+          "instant": true,
+          "legendFormat": "bruce.computer",
+          "range": false,
+          "refId": "A"
         }
+      ]
+    },
+    {
+      "id": "46",
+      "type": "stat",
+      "title": "bruce.computer | IP:443",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fbl-prometheus"
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 3,
+        "y": 40
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                }
+              }
+            }
+          ],
+          "noValue": "NO DATA",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "max by (resolved_ip) (fbl_ip_tcp_success{site=\"bruce.computer\"})",
+          "instant": true,
+          "legendFormat": "{{resolved_ip}}",
+          "range": false,
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "type": "stat",
+      "title": "bruce.computer| DNS",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fbl-prometheus"
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 7,
+        "y": 40
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+                  "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                }
+              }
+            }
+          ],
+          "noValue": "NO DATA",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "max(fbl_dns_resolution_success{site=\"bruce.computer\"})",
+          "instant": true,
+          "legendFormat": "bruce.computer",
+          "range": false,
+          "refId": "A"
+        }
+      ]
+    }
   ],
   "refresh": "30s",
   "schemaVersion": 39,
