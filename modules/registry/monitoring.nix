@@ -43,6 +43,7 @@ in
       { host = "www.wikipedia.org"; url = "https://www.wikipedia.org"; group = "global"; }
       { host = "telegram.org"; url = "https://telegram.org"; group = "global"; }
       { host = "archive.org"; url = "https://archive.org"; group = "global"; }
+      { host = "bruce.computer"; url = "https://bruce.computer"; group = "global"; }
 
       { host = "cloudflare.com"; url = "https://cloudflare.com"; group = "infra"; }
       { host = "example.com"; url = "https://example.com"; group = "infra"; }
