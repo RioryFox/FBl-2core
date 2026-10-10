@@ -2841,10 +2841,10 @@
         "uid": "fbl-prometheus"
       },
       "gridPos": {
-        "h": 8,
+        "h": 20,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 45
       },
       "fieldConfig": {
         "defaults": {},
