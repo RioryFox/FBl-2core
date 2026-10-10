@@ -45,10 +45,9 @@ in
 
   config = lib.mkIf cfg.enable {
     nix.settings = {
-      # Explicit priorities guarantee the intended fallback order.
-      # Lower numeric priority is preferred by Nix. Host-specific caches are
-      # intentionally scoped through fbl.cache.extraSubstituters instead of
-      # broadening the trust surface on every FBL host.
+      min-free = 10*1024*1024;
+      max-free = 50*1024*1024;
+      auto-optimise-store = true;
       substituters = lib.mkForce (
         [ "${cacheUrl}?priority=10" ]
         ++ cfg.extraSubstituters

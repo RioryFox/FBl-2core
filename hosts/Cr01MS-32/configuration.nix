@@ -62,7 +62,11 @@ in
   # Cr01 is the primary FBL binary-cache host. Keep store paths until an
   # explicit/manual garbage collection so builds from other hosts can remain
   # available through nix-serve. Boot-menu history is still capped separately.
-  nix.gc.automatic = false;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
   boot.loader.systemd-boot.configurationLimit = 5;
 
   # Cr01 only: trust the caches published by the pinned comfyui-nix stack.
