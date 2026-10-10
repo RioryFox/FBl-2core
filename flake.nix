@@ -16,34 +16,29 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-
-    # ComfyUI packaging is pinned independently from FBL core nixpkgs so the
-    # CUDA/PyTorch runtime stays on the upstream-tested dependency set.
-    comfyui-nix.url = "github:utensils/comfyui-nix/5e6d5155d302a015645164d195a6ad79f00ed43a";
-
-    authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
-    #nixpkgsGF.url = "github:NixOS/nixpkgs/nixos-26.05";
-    #nixpkgsFirmware.url = "github:NixOS/nixpkgs/nixos-26.05";
-
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";  #cbd8a72e5fe6af19d40e2741dc440d9227836860";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    alejandra.url = "github:kamadorueda/alejandra/8f47c5e82ee8e6e8adcc1748be0056a1e349f7e8";
 
-    microvm = {
-      url = "github:microvm-nix/microvm.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # ComfyUI packaging is pinned independently from FBL core nixpkgs so the
+    # CUDA/PyTorch runtime stays on the upstream-tested dependency set.
+    comfyui-nix.url = "github:utensils/comfyui-nix/5e6d5155d302a015645164d195a6ad79f00ed43a";
+    authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
+    alejandra.url = "github:kamadorueda/alejandra/8f47c5e82ee8e6e8adcc1748be0056a1e349f7e8";
 
     ags = {
       type = "github";
       owner = "aylur";
       repo = "ags";
       rev = "237601999d65a4663bcbab934f4f6ce1f579d728";
+    };
+
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     catppuccin = {
