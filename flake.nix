@@ -42,7 +42,7 @@
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix/release-26.05"; #5e9efb97caeffea3bf248023b6d8b68e63b839b9";
+      url = "github:catppuccin/nix/5e9efb97caeffea3bf248023b6d8b68e63b839b9";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
