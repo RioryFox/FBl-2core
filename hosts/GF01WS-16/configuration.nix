@@ -23,6 +23,7 @@ in {
 
     ../../modules/cyber
     ../../modules/common.nix
+    ../../modules/projects/esp.nix
     ../../modules/desktop/hyprland
 
     ../../modules/hardware/amd-drivers.nix
