@@ -91,28 +91,6 @@ in {
   services.n8n.enable = false;
 
   services = {
-        i2pd = {
-                enable = true;
-                proto.http = {
-                        enable = true;
-                        address = "127.0.0.1";
-                        port = i2pConsolePort;
-                };
-                proto.httpProxy.enable = true;
-                yggdrasil.enable = true;
-                bandwidth = 2048;
-                limits.transittunnels = 2500;
-                outTunnels.jabber-client = {
-                        type = "client";
-                        address = "127.0.0.1";
-                        port = i2pJabberPort;
-
-                        destination = "7cxm54tzp7oo6qu6i3tegcbpsdtlcyxefvjv3k5www2g7o72u4kxhin5.b32.i2p";
-                        destinationPort = 5222;
-
-                        keys = "jabber-transient";
-                };
-        };
   };
 
   security.pki.certificateFiles = [
