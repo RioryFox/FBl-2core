@@ -87,10 +87,9 @@ in {
     defaultUserShell = pkgs.zsh;
   };
 
-  services.n8n.enable = false;
-
   services = {
-    services.yggdrasil = {
+    n8n.enable = false;
+    yggdrasil = {
       enable = true;
     };
   };
