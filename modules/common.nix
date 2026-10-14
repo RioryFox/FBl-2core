@@ -43,6 +43,7 @@
     rsync
     wget
     kpcli
+    keepass
 
     # ─────────────────────────────────────────────
     # DEVELOPMENT
