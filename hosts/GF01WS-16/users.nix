@@ -68,6 +68,7 @@ in {
         rclone
         #pipx
         gajim
+        yggdrasil
         minicom
         (python3.withPackages (python-pkgs:
           with python-pkgs; [
