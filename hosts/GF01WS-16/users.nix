@@ -68,7 +68,6 @@ in {
         rclone
         #pipx
         gajim
-        yggdrasil
         minicom
         (python3.withPackages (python-pkgs:
           with python-pkgs; [
@@ -91,6 +90,9 @@ in {
   services.n8n.enable = false;
 
   services = {
+    services.yggdrasil = {
+      enable = true;
+    };
   };
 
   security.pki.certificateFiles = [

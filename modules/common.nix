@@ -101,9 +101,6 @@
     lsof
     pciutils
     usbutils  
-
-    #Network
-    yggdrasil
   ];
 
   environment.interactiveShellInit = ''
