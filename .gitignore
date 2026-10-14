@@ -21,6 +21,7 @@
 *.pem
 *.p12
 *.pfx
+*.crt
 secrets/
 **/secrets/
 credentials/
