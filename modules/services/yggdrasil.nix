@@ -14,4 +14,8 @@
       ];
     };
   };
+
+  networking.firewall.extraCommands = ''
+    ip6tables -I nixos-fw 1 -i tun -m conntrack --ctstate New -j DROP
+  '';
 }
