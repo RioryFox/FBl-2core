@@ -7,8 +7,10 @@
 
     settings = {
       Peers = [
-        "tls://yggmkg20001.io:443"
-        "tls://yggpeer.tilde.green:59454"
+        "tls://ygg.mkg20001.io:443"
+        "tls://ygg.peer.tilde.green:59454"
+        "tls://37.192.232.33:442"
+        "tls://5.252.118.13:443"
       ];
     };
   };
