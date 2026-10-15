@@ -16,6 +16,8 @@
   };
 
   networking.firewall.extraCommands = ''
-    ip6tables -I nixos-fw 1 -i tun -m conntrack --ctstate New -j DROP
+    ip6tables -A INPUT -i tun0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    ip6tables -A INPUT -i tun0 -m conntrack --ctstate INVALID -j DROP
+    ip6tables -A INPUT -i tun0 -j DROP
   '';
 }
