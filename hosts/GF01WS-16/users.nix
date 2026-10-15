@@ -87,13 +87,6 @@ in {
     defaultUserShell = pkgs.zsh;
   };
 
-  services = {
-    n8n.enable = false;
-    yggdrasil = {
-      enable = true;
-    };
-  };
-
   security.pki.certificateFiles = [
           ./cert.crt
   ];

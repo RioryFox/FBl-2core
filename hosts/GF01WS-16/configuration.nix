@@ -11,7 +11,7 @@ in {
     ./hardware-configuration.nix
     ./users.nix
     ./packages.nix
-    ./pkgs/dude.nix
+    #./pkgs/dude.nix
     ./pkgs/wireguard.nix
 
     ../../modules/registry/ports.nix
@@ -37,6 +37,8 @@ in {
     ../../modules/programs/vscodium.nix
     ../../modules/programs/steam.nix
     ../../modules/programs/amnezia-vpn.nix
+
+    ../../modules/services/yggdrasil.nix
   ];
 
   boot = {
