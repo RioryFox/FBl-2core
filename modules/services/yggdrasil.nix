@@ -3,7 +3,7 @@
 {
   services.yggdrasil = {
     enable = true;
-    persistenKeys = true;
+    persistentKeys = true;
 
     settings = {
       Peers = [
