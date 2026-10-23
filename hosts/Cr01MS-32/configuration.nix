@@ -17,6 +17,7 @@ in
     ./storage.nix
     ../../modules/registry/network.nix
     ../../modules/common.nix
+    ../../modules/registry/cache.nix #double
     ../../modules/system/cr01-build-survivability.nix
     
     #services

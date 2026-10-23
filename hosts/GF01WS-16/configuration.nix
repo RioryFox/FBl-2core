@@ -16,7 +16,7 @@ in {
 
     ../../modules/registry/ports.nix
     ../../modules/registry/network.nix
-    ../../modules/registry/cache.nix
+    ../../modules/registry/cache.nix #double
 
     ../../modules/services/gf-monitoring-exporters.nix
     ../../modules/services/v2ray.nix
