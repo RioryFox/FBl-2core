@@ -2,6 +2,7 @@
 /result
 /result-*
 /flake.lock.fbl-seed
+/flake.lock
 
 # FBL local/archive material
 /_archive/
