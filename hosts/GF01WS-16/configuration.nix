@@ -39,6 +39,7 @@ in {
     ../../modules/programs/amnezia-vpn.nix
 
     ../../modules/services/yggdrasil.nix
+    ../../modules/services/dino.nix
   ];
 
   boot = {
