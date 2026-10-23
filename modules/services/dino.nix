@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-        services.dino = {
-                enable = true;
-        };
+  services.dino = {
+    enable = true;
+  };
 }

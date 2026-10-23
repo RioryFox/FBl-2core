@@ -28,6 +28,7 @@ let
   ]);
 
   unstablePackages = with pkgsUnstable; [
+    dino
     amnezia-vpn
   ];
   
