@@ -60,7 +60,7 @@ in
       trusted-public-keys = lib.mkAfter ([ cfg.publicKey ] ++ cfg.extraTrustedPublicKeys);
       experimental-features = ["nix-command" "flakes"];
       fallback = true;
-      connect-timeout = 3;
+      connect-timeout = 15;
       stalled-download-timeout = 10;
       download-attempts = 2;
       narinfo-cache-negative-ttl = 3600;
