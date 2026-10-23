@@ -215,14 +215,6 @@ in {
 
   nix = {
     settings = {
-      auto-optimise-store = true;
-      experimental-features = ["nix-command" "flakes"];
-      fallback = true;
-      connect-timeout = 5;
-      stalled-download-timeout = 10;
-      download-attempts = 2;
-      narinfo-cache-negative-ttl = 3600;
-
       # The FBL primary/fallback cache chain is owned by modules/registry/cache.nix.
       # Keep Hyprland Cachix additive for GF01-specific packages.
       extra-substituters = ["https://hyprland.cachix.org"];

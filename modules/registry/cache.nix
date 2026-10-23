@@ -58,9 +58,12 @@ in
         ]
       );
       trusted-public-keys = lib.mkAfter ([ cfg.publicKey ] ++ cfg.extraTrustedPublicKeys);
+      experimental-features = ["nix-command" "flakes"];
       fallback = true;
-      connect-timeout = lib.mkDefault 5;
-      stalled-download-timeout = lib.mkDefault 20;
+      connect-timeout = 3;
+      stalled-download-timeout = 10;
+      download-attempts = 2;
+      narinfo-cache-negative-ttl = 3600;
     };
   };
 }
