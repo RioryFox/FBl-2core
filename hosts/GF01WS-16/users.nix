@@ -67,7 +67,6 @@ in {
         traceroute
         rclone
         #pipx
-        gajim
         minicom
         (python3.withPackages (python-pkgs:
           with python-pkgs; [

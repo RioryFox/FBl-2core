@@ -28,7 +28,10 @@ let
   ]);
 
   unstablePackages = with pkgsUnstable; [
+    kaidan
     dino
+    profanity
+    gajim
     amnezia-vpn
   ];
   
