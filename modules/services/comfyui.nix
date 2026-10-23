@@ -9,7 +9,7 @@ in
   imports = [ inputs.comfyui-nix.nixosModules.default ];
 
   services.comfyui = {
-    enable = true;
+    enable = false;
     gpuSupport = "cuda";
     inherit port dataDir;
 
