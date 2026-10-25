@@ -62,7 +62,7 @@ in {
         open-webui
         libreoffice
         ani-cli
-        codex
+        #codex
         shotcut
         traceroute
         rclone

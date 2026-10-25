@@ -59,7 +59,7 @@ in {
     genericName = "MikroTik Router Management";
     comment = "Manage MikroTik RouterOS devices";
     exec = "${winboxGF01}/bin/winbox";
-    icon = "winbox";
+    icon = "";
     terminal = false;
     categories = ["Network" "RemoteAccess"];
   };

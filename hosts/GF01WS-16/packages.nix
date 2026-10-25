@@ -38,15 +38,15 @@ let
   stablePackages = with pkgs; [
     mpvpaper
     git
-    winbox
+    #winbox
     rclone
     python3
     xauth
     python-packages
     convertx
     qbittorrent
-    dillo
-    browsh
+    #dillo
+    #browsh
   ];
 
 in {
