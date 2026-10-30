@@ -56,7 +56,6 @@ in {
         figma-linux
         telegram-desktop
         wireshark
-        gparted
         steam
         goofcord
         open-webui
