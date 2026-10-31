@@ -1,11 +1,11 @@
 { pkgsUnstable, config, ... }:
 let 
-  httpsPort
+  httpsPort = toString config.fbl.ports.udp.https;
   quicPort = toString config.fbl.ports.udp.quic;
   discordVoice = config.fbl.ports.udpRanges.discordVoice;
   discordMedia = config.fbl.ports.udpRanges.discordMedia;
 
-{
+in {
   services.zapret = {
     enable = true;
     package = pkgsUnstable.zapret;
@@ -30,7 +30,7 @@ let
     udpSupport = true;
 
     udpPorts = [
-      quicPort;
+      quicPort
       (queueRange discordVoice)
       (queueRange discordMedia)
     ];
@@ -42,13 +42,13 @@ let
       "--dpi-desync-repeats=6"
       "--dpi-desync-any-protocol"
       "--new"
-      "--filter-udp=${httpsPort}"
-      "--filter-l7=${quicPort}"
+      "--filter-udp=${quicPort}"
+      "--filter-l7=quic"
       "--hostlist-domains=youtube.com,googlevideo.com,ytimg.com,youtu.be"
       "--dpi-desync=fake"
       "--dpi-desync-repeats=6"
       "--new"
-      "--filter-tcp=${quicPort}"
+      "--filter-tcp=${httpsPort}"
       "--dpi-desync=fake,disorder2"
       "--dpi-desync-ttl=1"
       "--dpi-desync-autottl=2"
