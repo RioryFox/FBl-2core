@@ -111,4 +111,26 @@
   '';
 
   networking.firewall.enable = true;
+
+  
+  # Temporary workaround for Nixpkgs #580269 it is a bag?
+  # Remove after the fix reaches nixos-26.05 but i got a troubles with now pkgs
+  nixpkgs.overlays = [
+    (final: prev: {
+      pythonPackagesExtensions =
+        prev.pythonPackagesExtensions ++ [
+          (pyFinal: pyPrev: {
+            imageio = pyPrev.imageio.overridePythonAttrs (old: {
+              disabledTestPaths =
+                (old.disabledTestPaths or []) ++ [
+                  "tests/test_pillow.py::test_png_16bit"
+                  "tests/test_pillow_legacy.py::test_png"
+                ];
+            });
+          })
+        ];
+    })
+  ];
+
+
 }

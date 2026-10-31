@@ -66,8 +66,8 @@ in
       ] ++ cfg.extraTrustedPublicKeys);
       experimental-features = ["nix-command" "flakes"];
       fallback = true;
-      connect-timeout = 10;
-      download-attempts = 2;
+      connect-timeout = 15;
+      download-attempts = 3;
       stalled-download-timeout = 360;
       narinfo-cache-negative-ttl = 3600;
     };

@@ -60,11 +60,9 @@ in {
         goofcord
         libreoffice
         ani-cli
-        #codex
         shotcut
         traceroute
         rclone
-        #pipx
         minicom
         (python3.withPackages (python-pkgs:
           with python-pkgs; [
@@ -74,7 +72,6 @@ in {
             beautifulsoup4
             pip
             myVkApi
-            #pipx
             pytz
             aiogram
           ]))
