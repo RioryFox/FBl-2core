@@ -71,5 +71,29 @@
         wireguard = 51820;
       };
     };
+
+    udpRanges = lib.mkOption {
+      type = lib.types.attrsOf (lib.types.submodule {
+        options = {
+          from = lib.mkOption {
+            type = lib.types.port;
+          };
+          to = lib.mkOption {
+            type = lib.types.port;
+          } ;
+        };
+      });
+
+      default = {
+        discordVoice = {
+          from = 19294;
+          to = 19344;
+        };
+        discordMedia = {
+          from = 50000;
+          to = 50100;
+        };
+      };
+    };
   };
 }
