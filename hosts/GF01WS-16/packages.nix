@@ -33,7 +33,6 @@ let
     profanity
     gajim
     amnezia-vpn
-    zapret
   ];
   
   stablePackages = with pkgs; [
