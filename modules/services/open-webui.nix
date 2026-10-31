@@ -7,7 +7,7 @@ let
 in
 {
   services.open-webui = {
-    enable = true;
+    enable = false;
     inherit port;
     host = address;
   };
