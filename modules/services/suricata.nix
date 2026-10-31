@@ -3,7 +3,6 @@
 {
   services.suricata = {
     enable = true;
-    ports = [ config.fbl.ports.tcp.ssh ];
     settings = {
       vars.port-groups = {
         DNP3_PORTS = "20000";
@@ -18,7 +17,6 @@
         TEREDO_PORTS = "3544";
         VXLAN_PORTS = "4789";
       };
-
     };
   };
 }
