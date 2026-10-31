@@ -53,17 +53,5 @@ let
       "--dpi-desync-ttl=1"
       "--dpi-desync-autottl=2"
     ];
-
-    networking.firewall = {
-                enable = true;
-                allowedTCPPorts =
-                        if config.services.zapret.enable
-                        then [ ]
-                        else [ ];
-                allowedUDPPorts =
-                        if config.services.zapret.enable
-                        then [  ]
-                        else [ ];     
-        };   
   };
 }
