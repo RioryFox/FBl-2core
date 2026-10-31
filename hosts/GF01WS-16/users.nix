@@ -58,7 +58,6 @@ in {
         wireshark
         steam
         goofcord
-        open-webui
         libreoffice
         ani-cli
         #codex
