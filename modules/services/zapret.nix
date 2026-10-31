@@ -1,9 +1,12 @@
 { pkgsUnstable, config, ... }:
-let 
-  httpsPort = toString config.fbl.ports.udp.https;
+let  
+  httpsPort = toString config.fbl.ports.tcp.https;
   quicPort = toString config.fbl.ports.udp.quic;
   discordVoice = config.fbl.ports.udpRanges.discordVoice;
   discordMedia = config.fbl.ports.udpRanges.discordMedia;
+
+  queueRange = r:"${toString r.from}:${toString r.to}";
+  filterRange = r:"${toString r.from}-${toString r.to}";
 
 in {
   services.zapret = {
