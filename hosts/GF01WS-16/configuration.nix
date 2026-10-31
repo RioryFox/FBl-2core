@@ -15,7 +15,7 @@ in {
 
     ../../modules/registry/ports.nix
     ../../modules/registry/network.nix
-    ../../modules/registry/cache.nix
+    #../../modules/registry/cache.nix
 
     ../../modules/cyber
     ../../modules/common.nix
@@ -209,8 +209,8 @@ in {
     '';
   };
 
-  nix = {
-    settings = {
+  fbl = {
+    cache = {
       # The FBL primary/fallback cache chain is owned by modules/registry/cache.nix.
       # Keep Hyprland Cachix additive for GF01-specific packages.
       extra-substituters = [
@@ -251,5 +251,5 @@ in {
   };
 
   console.keyMap = "us";
-  system.stateVersion = "26.11";
+  system.stateVersion = "26.05";
 }

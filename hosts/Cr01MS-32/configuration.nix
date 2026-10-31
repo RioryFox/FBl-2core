@@ -17,7 +17,7 @@ in
     ./storage.nix
     ../../modules/registry/network.nix
     ../../modules/common.nix
-    ../../modules/registry/cache.nix #double
+    #../../modules/registry/cache.nix
     ../../modules/system/cr01-build-survivability.nix
     
     #services
@@ -142,5 +142,5 @@ in
     vulkan-tools
   ];
 
-  system.stateVersion = "26.11";
+  system.stateVersion = "26.05";
 }
