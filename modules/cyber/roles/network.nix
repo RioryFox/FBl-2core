@@ -129,7 +129,6 @@ with pkgs;
   sslsplit
   stacs
   stunnel
-  suricata
   swaks
   tcpdump
   tcpflow

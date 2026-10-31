@@ -13,6 +13,7 @@
         https = 443;
         ssh = 22;
         nextcloud = 80;
+        suricata = 100;
         # Cr01 internal Git forge / primary writable Git source.
         gitea = 3000;
         # Gitea built-in SSH listener for clone/push; system OpenSSH remains on ssh=22.
