@@ -44,6 +44,7 @@ in {
       "--dpi-desync=fake"
       "--dpi-desync-repeats=6"
       "--dpi-desync-any-protocol"
+      "--dpi-desync-cutoff=n6"
       "--new"
       "--filter-udp=${quicPort}"
       "--filter-l7=quic"
