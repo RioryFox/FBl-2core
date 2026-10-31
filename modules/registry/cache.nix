@@ -32,13 +32,17 @@ in
 
     extraSubstituters = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ ];
+      default = [ 
+        "https://nix-community.cachix.org"
+      ];
       description = "Host-specific binary caches inserted after the primary Cr01 cache.";
     };
 
     extraTrustedPublicKeys = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ ];
+      default = [ 
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
       description = "Host-specific trusted signing keys for extra binary caches.";
     };
   };

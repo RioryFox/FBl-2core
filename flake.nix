@@ -1,18 +1,17 @@
 {
   description = "FBl-2core — FBL-Core for  GF01WS-16 and Cr01MS-32";
 
-  # Bootstrap cache hints: these apply while evaluating/building this flake,
-  # before a new NixOS generation can persist the same Cr01 host settings.
-  nixConfig = {
-    extra-substituters = [
+
+  #nixConfig = {
+    #extra-substituters = [
       #"https://comfyui.cachix.org"
       "https://nix-community.cachix.org"
-    ];
-    extra-trusted-public-keys = [
+    #];
+    #extra-trusted-public-keys = [
       #"comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
+      #"nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    #];
+  #};
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
