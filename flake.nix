@@ -1,18 +1,6 @@
 {
   description = "FBl-2core — FBL-Core for  GF01WS-16 and Cr01MS-32";
 
-
-  #nixConfig = {
-    #extra-substituters = [
-      #"https://comfyui.cachix.org"
-      #"https://nix-community.cachix.org"
-    #];
-    #extra-trusted-public-keys = [
-      #"comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
-      #"nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    #];
-  #};
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.11";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -22,9 +10,7 @@
     };
 
 
-    # ComfyUI packaging is pinned independently from FBL core nixpkgs so the
     # CUDA/PyTorch runtime stays on the upstream-tested dependency set.
-    #comfyui-nix.url = "github:utensils/comfyui-nix/5e6d5155d302a015645164d195a6ad79f00ed43a";
     authentik-nix.url = "github:nix-community/authentik-nix/fd34a5238314351ed92dd79d00f518b8a03e19cb";
     alejandra.url = "github:kamadorueda/alejandra/8f47c5e82ee8e6e8adcc1748be0056a1e349f7e8";
 

@@ -11,15 +11,11 @@ in {
     ./hardware-configuration.nix
     ./users.nix
     ./packages.nix
-    #./pkgs/dude.nix
     ./pkgs/wireguard.nix
 
     ../../modules/registry/ports.nix
     ../../modules/registry/network.nix
-    ../../modules/registry/cache.nix #double
-
-    ../../modules/services/gf-monitoring-exporters.nix
-    ../../modules/services/v2ray.nix
+    ../../modules/registry/cache.nix
 
     ../../modules/cyber
     ../../modules/common.nix
@@ -33,12 +29,13 @@ in {
     ../../modules/hardware/vm-guest-services.nix
     ../../modules/hardware/local-hardware-clock.nix
 
-
     ../../modules/programs/vscodium.nix
     ../../modules/programs/steam.nix
     ../../modules/programs/amnezia-vpn.nix
 
     ../../modules/services/yggdrasil.nix
+    ../../modules/services/gf-monitoring-exporters.nix
+    ../../modules/services/v2ray.nix
   ];
 
   boot = {
@@ -216,7 +213,9 @@ in {
     settings = {
       # The FBL primary/fallback cache chain is owned by modules/registry/cache.nix.
       # Keep Hyprland Cachix additive for GF01-specific packages.
-      extra-substituters = ["https://hyprland.cachix.org"];
+      extra-substituters = [
+        "https://hyprland.cachix.org"
+      ];
       extra-trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];

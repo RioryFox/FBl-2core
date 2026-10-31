@@ -32,17 +32,13 @@ in
 
     extraSubstituters = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ 
-        "https://nix-community.cachix.org"
-      ];
+      default = [ ];
       description = "Host-specific binary caches inserted after the primary Cr01 cache.";
     };
 
     extraTrustedPublicKeys = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ 
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      ];
+      default = [];
       description = "Host-specific trusted signing keys for extra binary caches.";
     };
   };
@@ -53,20 +49,26 @@ in
       max-free = 50*1024*1024;
       auto-optimise-store = true;
       substituters = lib.mkForce (
-        [ "${cacheUrl}?priority=10" ]
+        [ 
+          "${cacheUrl}?priority=10" 
+          "https://cache.nixos.org/?priority=20"
+          "https://nix-community.cachix.org/?priority=30"
+        ]
         ++ cfg.extraSubstituters
         ++ [
-          "https://cache.nixos.org/?priority=20"
-          "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=30"
-          "https://mirrors.ustc.edu.cn/nix-channels/store?priority=40"
+          "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=40"
+          "https://mirrors.ustc.edu.cn/nix-channels/store?priority=50"
         ]
       );
-      trusted-public-keys = lib.mkAfter ([ cfg.publicKey ] ++ cfg.extraTrustedPublicKeys);
+      trusted-public-keys = lib.mkAfter ([
+         cfg.publicKey 
+         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ] ++ cfg.extraTrustedPublicKeys);
       experimental-features = ["nix-command" "flakes"];
       fallback = true;
-      connect-timeout = 15;
-      stalled-download-timeout = 10;
-      download-attempts = 2;
+      connect-timeout = 20;
+      stalled-download-timeout = 60;
+      download-attempts = 3;
       narinfo-cache-negative-ttl = 3600;
     };
   };
