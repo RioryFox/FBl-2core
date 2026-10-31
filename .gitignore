@@ -1,8 +1,8 @@
 # Nix build outputs
 /result
 /result-*
-#/flake.lock.fbl-seed
-#/flake.lock
+/flake.lock.fbl-seed
+/flake.lock
 
 # FBL local/archive material
 /_archive/
