@@ -5,7 +5,7 @@
   #nixConfig = {
     #extra-substituters = [
       #"https://comfyui.cachix.org"
-      "https://nix-community.cachix.org"
+      #"https://nix-community.cachix.org"
     #];
     #extra-trusted-public-keys = [
       #"comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
@@ -14,10 +14,10 @@
   #};
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.11";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager/release-26.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
