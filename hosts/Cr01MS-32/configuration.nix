@@ -25,6 +25,7 @@ in
     ../../modules/services/nix-serve.nix
     ../../modules/services/ollama.nix
     ../../modules/services/open-webui.nix
+    ../../modules/services/suricata.nix
     #../../modules/services/comfyui.nix
     ../../modules/services/authentik.nix
     ../../modules/services/cr-monitoring-exporters.nix
@@ -73,15 +74,15 @@ in
   # Cr01 only: trust the caches published by the pinned comfyui-nix stack.
   # Keeping these host-scoped avoids widening the trust surface on FBL nodes
   # that do not consume ComfyUI/CUDA artifacts.
-  fbl.cache.extraSubstituters = [
+  #fbl.cache.extraSubstituters = [
     #"https://comfyui.cachix.org?priority=30"
-    "https://nix-community.cachix.org?priority=20"
-  ];
+    #"https://nix-community.cachix.org?priority=20"
+  #];
 
-  fbl.cache.extraTrustedPublicKeys = [
+  #fbl.cache.extraTrustedPublicKeys = [
     #"comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
-    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  ];
+    #"nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #];
 
   networking.hostName = "Cr01MS-32";
   networking.networkmanager.enable = false;
@@ -128,7 +129,6 @@ in
     hashedPassword = "$6$5Bm9ZYDSIhvH4gI9$5uKVHeI12NHmydVjEtEGqsiQtbe08OPX.0Pii3NKblqZMgTFzD6KeIUAY5X82SZfxj4oEyLAWyJLtnCCT.cIG0";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      smartmontools
     ];
   };
 
