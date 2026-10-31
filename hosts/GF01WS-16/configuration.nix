@@ -211,12 +211,13 @@ in {
 
   fbl = {
     cache = {
+      enable = true;
       # The FBL primary/fallback cache chain is owned by modules/registry/cache.nix.
       # Keep Hyprland Cachix additive for GF01-specific packages.
-      extra-substituters = [
+      extraSubstituters = [
         "https://hyprland.cachix.org/?priority=60"
       ];
-      extra-trusted-public-keys = [
+      extraTrustedPublicKeys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };

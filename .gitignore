@@ -23,6 +23,8 @@
 *.p12
 *.pfx
 *.crt
+*.pub
+*.secret
 secrets/
 **/secrets/
 credentials/
