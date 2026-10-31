@@ -91,12 +91,6 @@ in {
     # The original GF cyber/common module supplied these. The shared FBL cyber
     # module supplies the role tools; this is the GF-only compatibility delta.
     systemPackages = with pkgs; [
-      wine
-      (wine.override {wineBuild = "wine64";})
-      wine64
-      wineWowPackages.staging
-      winetricks
-      wineWowPackages.waylandFull
     ];
   };
 

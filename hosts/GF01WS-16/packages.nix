@@ -38,7 +38,6 @@ let
   stablePackages = with pkgs; [
     mpvpaper
     git
-    #winbox
     rclone
     python3
     xauth

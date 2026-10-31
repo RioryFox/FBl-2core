@@ -23,13 +23,6 @@
     export SHELL="${tabbyHostShell}/bin/tabby-host-shell"
     exec /run/current-system/sw/bin/tabby-terminal "$@"
   '';
-
-  winboxGF01 = pkgs.writeShellScriptBin "winbox" ''
-    export WINEPREFIX="$HOME/.local/share/winbox/wineprefix"
-    export WINEARCH=win64
-    ${pkgs.coreutils}/bin/mkdir -p "$WINEPREFIX"
-    exec ${pkgs.winbox}/bin/winbox "$@"
-  '';
 in {
   imports = [
     ./terminals/tmux.nix
@@ -49,20 +42,7 @@ in {
   home.packages = [
     tabbyHostShell
     tabbyHostTerminal
-    winboxGF01
   ];
-
-  # Prefer this user-level desktop entry over the one from the raw package, so
-  # launchers also use the isolated 64-bit prefix.
-  xdg.desktopEntries.winbox = {
-    name = "WinBox";
-    genericName = "MikroTik Router Management";
-    comment = "Manage MikroTik RouterOS devices";
-    exec = "${winboxGF01}/bin/winbox";
-    icon = "";
-    terminal = false;
-    categories = ["Network" "RemoteAccess"];
-  };
 
   home.file.".config/hypr/UserConfigs/01-UserDefaults.conf".text = ''
     # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
