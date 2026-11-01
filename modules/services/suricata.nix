@@ -4,6 +4,7 @@
   services.suricata = {
     enable = true;
     settings = {
+      classification-file = "${config.services.suricata.package}/etc/suricata/slassification.config"
       af-packet = [
         {
           interface = config.fbl.network.interfaces.cr01Lan;
