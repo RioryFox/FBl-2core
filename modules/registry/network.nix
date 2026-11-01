@@ -36,6 +36,7 @@
       type = lib.types.attrsOf lib.types.str;
       default = {
         cr01 = "192.168.3.253";
+        gf01 = "192.168.3.50";
       };
     };
 
@@ -43,6 +44,7 @@
       type = lib.types.attrsOf lib.types.str;
       default = {
         cr01Lan = "enp3s0";
+        gf01Lan = "enp4s0";
       };
     };
 
