@@ -48,7 +48,7 @@ in
       ${pkgs.coreutils}/bin/install -d -m 0750 -o nextcloud -g nextcloud ${movies}
       ${pkgs.acl}/bin/setfacl -m u:jellyfin:--x ${cloudExternal02}
       ${pkgs.acl}/bin/setfacl -R -m u:jellyfin:rX ${movies}
-      ${pkgs.findutils}/bin/find ${movies} -exec ${pkgs.acl}/bin/setfacl -m d:u:jellyfin:rx {} +
+      ${pkgs.findutils}/bin/find ${movies} -type d -exec ${pkgs.acl}/bin/setfacl -m d:u:jellyfin:rx {} +
     '';
   };
 
