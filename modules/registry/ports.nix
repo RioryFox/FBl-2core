@@ -14,18 +14,12 @@
         ssh = 22;
         nextcloud = 80;
         suricata = 100;
-        # Cr01 internal Git forge / primary writable Git source.
         gitea = 3000;
-        # Gitea built-in SSH listener for clone/push; system OpenSSH remains on ssh=22.
         giteaSsh = 2222;
         open-webui = 3001;
-        # Authentik public nginx entrypoint; Authentik backend uses the same
-        # number on loopback only.
         authentik = 9000;
-        # Authentik worker/backend listeners stay loopback-only.
         authentikWorker = 9010;
         comfyui = 8188;
-        # Authentik-protected nginx frontend for browser access to ComfyUI.
         comfyuiProtected = 8189;
         grafana = 3002;
         squid = 3128;
