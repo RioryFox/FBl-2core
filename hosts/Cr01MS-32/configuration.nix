@@ -17,7 +17,6 @@ in
     ./storage.nix
     ../../modules/registry/network.nix
     ../../modules/common.nix
-    #../../modules/registry/cache.nix
     ../../modules/system/cr01-build-survivability.nix
     
     #services
@@ -33,7 +32,7 @@ in
     ../../modules/services/network-diagnostics.nix
     ../../modules/services/grafana.nix
     ../../modules/services/nextcloud.nix
-    #../../modules/services/jellyfin.nix
+    ../../modules/services/jellyfin.nix
     ../../modules/services/qbittorrent.nix
     ../../modules/services/metube.nix
     ../../modules/services/zapret.nix
