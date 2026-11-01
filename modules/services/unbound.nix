@@ -22,7 +22,7 @@
             "1.1.1.1@853#cloudflare-dns.com"
             "1.0.0.1@853#cloudflare-dns.com"
           ];
-        };
+        }
       ];
       remote-control.control-enable = true;
     };
