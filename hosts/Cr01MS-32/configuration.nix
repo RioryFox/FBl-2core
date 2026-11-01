@@ -37,7 +37,7 @@ in
     ../../modules/services/qbittorrent.nix
     ../../modules/services/metube.nix
     ../../modules/services/zapret.nix
-    ../../modulesd/services/unbound.nix
+    ../../modules/services/unbound.nix
     ../../modules/services/gitea.nix
     ../../modules/services/searxng.nix
     
