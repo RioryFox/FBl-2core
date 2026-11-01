@@ -44,7 +44,7 @@
       type = lib.types.attrsOf lib.types.str;
       default = {
         cr01Lan = "enp3s0";
-        gf01Lan = "enp4s0";
+        gf01Lan = "enp4s0f4u1c2";
       };
     };
 
