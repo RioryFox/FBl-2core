@@ -102,7 +102,7 @@ in {
 
   networking = {
     hostName = "GF01WS-16";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
   };
 
@@ -137,7 +137,6 @@ in {
 
     smartd = {
       enable = true;
-      #autodetect = true;
     };
 
     gvfs.enable = true;

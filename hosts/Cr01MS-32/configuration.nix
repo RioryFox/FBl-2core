@@ -72,19 +72,6 @@ in
   };
   boot.loader.systemd-boot.configurationLimit = 5;
 
-  # Cr01 only: trust the caches published by the pinned comfyui-nix stack.
-  # Keeping these host-scoped avoids widening the trust surface on FBL nodes
-  # that do not consume ComfyUI/CUDA artifacts.
-  #fbl.cache.extraSubstituters = [
-    #"https://comfyui.cachix.org?priority=30"
-    #"https://nix-community.cachix.org?priority=20"
-  #];
-
-  #fbl.cache.extraTrustedPublicKeys = [
-    #"comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
-    #"nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  #];
-
   networking.hostName = "Cr01MS-32";
   networking.networkmanager.enable = false;
 
