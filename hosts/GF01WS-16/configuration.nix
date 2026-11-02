@@ -5,6 +5,11 @@
   ...
 }: let
   inherit (import ./variables.nix) keyboardLayout;
+  lanInterface = config.fbl.network.interfaces.gf01Lan;
+  lanAddress = config.fbl.network.hosts.gf01;
+  lanPrefix = config.fbl.network.lan.prefixLength;
+  lanGateway = config.fbl.network.lan.gateway;
+  publicDns = config.fbl.network.upstream.publicDns;
   sshPort = config.fbl.ports.tcp.ssh;
 in {
   imports = [
@@ -12,9 +17,6 @@ in {
     ./users.nix
     ./packages.nix
     ./pkgs/wireguard.nix
-
-    #../../modules/registry/ports.nix
-    #../../modules/registry/network.nix
 
     ../../modules/cyber
     ../../modules/common.nix
@@ -34,7 +36,6 @@ in {
 
     ../../modules/services/yggdrasil.nix
     ../../modules/services/gf-monitoring-exporters.nix
-    #../../modules/services/v2ray.nix
     ../../modules/services/zapret.nix
   ];
 
@@ -104,6 +105,26 @@ in {
     networkmanager.enable = true;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
   };
+
+  networking.useDHCP = false;
+  networking.interfaces.${lanInterface} = {
+    useDHCP = false;
+    ipv4.addresses = [
+      {
+        address = lanAddress;
+        prefixLength = lanPrefix;
+      }
+    ];
+  };
+  networking.defaultGateway = {
+    address = lanGateway;
+    interface = lanInterface;
+  };
+  networking.nameservers = [ lanGateway publicDns ];
+  networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
+    if config.services.openssh.enable
+    then [ sshPort ]
+    else [ ];
 
   services = {
     xserver = {
