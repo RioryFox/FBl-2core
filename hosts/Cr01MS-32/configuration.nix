@@ -15,7 +15,7 @@ in
     ./hardware-configuration.nix
     ./mirror-backup.nix
     ./storage.nix
-    ../../modules/registry/network.nix
+    #../../modules/registry/network.nix
     ../../modules/common.nix
     ../../modules/system/cr01-build-survivability.nix
     

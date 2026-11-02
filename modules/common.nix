@@ -4,6 +4,7 @@
   imports = [
     ./registry/ports.nix
     ./registry/monitoring.nix
+    ./registry/network.nix
     ./registry/cache.nix
     ./services/ssh.nix
   ];

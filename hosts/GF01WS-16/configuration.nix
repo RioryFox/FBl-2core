@@ -13,8 +13,8 @@ in {
     ./packages.nix
     ./pkgs/wireguard.nix
 
-    ../../modules/registry/ports.nix
-    ../../modules/registry/network.nix
+    #../../modules/registry/ports.nix
+    #../../modules/registry/network.nix
 
     ../../modules/cyber
     ../../modules/common.nix
