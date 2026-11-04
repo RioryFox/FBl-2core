@@ -17,6 +17,7 @@ in {
   ];
 
   networking.nftables.enable = true;
+  documentation.nixos.checkRedirects = false;
 
   services.zapret2 = {
     enable = true;
