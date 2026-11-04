@@ -2,7 +2,14 @@
 
 let
   httpsPort = config.fbl.ports.tcp.https;
-  egressInterface = config.fbl.network.interfaces.gf01Lan;
+  
+  myInterface =
+    if config.networking.hostName == "Cr01MS-32"
+    then config.fbl.network.interfaces.cr01Lan
+    else if config.networking.hostName == "GF01WS-16"
+    then config.fbl.network.interfaces.gf01Lan
+    else throw "Unsupported FBL host for zapret2";
+
 in {
   imports = [
     (inputs.nixpkgsUnstable.outPath
@@ -17,7 +24,7 @@ in {
 
     firewall = {
       configureAutomatically = true;
-      interfaces = [ egressInterface ];
+      interfaces = [ myInterface ];
 
       tcpPorts = [ httpsPort ];
       udpPorts = [];

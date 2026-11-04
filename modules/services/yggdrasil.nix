@@ -16,9 +16,14 @@
     };
   };
 
-  networking.firewall.extraCommands = ''
-    ip6tables -A INPUT -i tun0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-    ip6tables -A INPUT -i tun0 -m conntrack --ctstate INVALID -j DROP
-    ip6tables -A INPUT -i tun0 -j DROP
-  '';
+  networking.nftables.tables.fbl-yggdrasil-guard = {
+    family = "ip6";
+    content = ''
+      chain input {
+        type filter hook input priority -10; policy accept;
+        iifname "tun0" ct state != { established, related } drop
+      }
+    '';
+  };
+
 }
