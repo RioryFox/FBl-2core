@@ -35,7 +35,7 @@ in
     ../../modules/services/jellyfin.nix
     ../../modules/services/qbittorrent.nix
     ../../modules/services/metube.nix
-    ../../modules/services/zapret.nix
+    ../../modules/services/zapret2.nix
     ../../modules/services/unbound.nix
     ../../modules/services/gitea.nix
     ../../modules/services/searxng.nix

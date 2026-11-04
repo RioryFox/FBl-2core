@@ -36,7 +36,7 @@ in {
 
     ../../modules/services/yggdrasil.nix
     ../../modules/services/gf-monitoring-exporters.nix
-    ../../modules/services/zapret.nix
+    ../../modules/services/zapret2.nix
   ];
 
   boot = {
