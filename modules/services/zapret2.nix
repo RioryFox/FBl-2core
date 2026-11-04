@@ -1,9 +1,14 @@
-{ config, pkgsUnstable, ... }:
+{ config, inputs, pkgsUnstable, ... }:
 
 let
   httpsPort = config.fbl.ports.tcp.https;
   egressInterface = config.fbl.network.interfaces.gf01Lan;
 in {
+  imports = [
+    (inputs.nixpkgsUnstable.outPath
+      + "/nixos/modules/services/networking/zapret2.nix")
+  ];
+
   networking.nftables.enable = true;
 
   services.zapret2 = {
