@@ -106,9 +106,9 @@ in {
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
   };
 
-  networking.useDHCP = false;
+  networking.useDHCP = true;
   networking.interfaces.${lanInterface} = {
-    useDHCP = false;
+    useDHCP = true;
     ipv4.addresses = [
       {
         address = lanAddress;

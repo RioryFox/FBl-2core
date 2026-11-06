@@ -33,7 +33,7 @@ in {
       homeMode = "755";
       isNormalUser = true;
       description = gitUsername;
-      hashedPassword = "$6$p5UEBYWKO7LzGnJM$kKJ2RAGB6HKmMVPoQVhx.lpk3ouzwAAKUAZCf0Luy.0IVRBfaZW7ACbN6bbBb4cYZVTAVZTaSiWqEF1FMjYDI/";
+      hashedPassword = "$6$FBLgf02temp2026$cQAMFngZR8wYFntqqaM5OlHWufU5/Hgno.qXw0udbBjj//crIh0A.PsgvW/aRyN5lLLyKSxJiJ5FXljFKyctA1";
       extraGroups = [
         "networkmanager"
         "wheel"

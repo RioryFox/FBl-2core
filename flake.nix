@@ -98,7 +98,7 @@
         specialArgs = {
           inherit inputs system;
           host = "GF02WS-8";
-          username = "andow";
+          username = "andow325";
           pkgsUnstable = UnstablePkgs;
         };
         modules = [
