@@ -45,7 +45,9 @@ let
     convertx
     qbittorrent
     #dillo
-    #browsh
+    browsh
+    goofcord
+    discord
   ];
 
 in {
