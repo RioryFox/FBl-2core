@@ -82,9 +82,9 @@ in {
     defaultUserShell = pkgs.zsh;
   };
 
-  #security.pki.certificateFiles = [
-   #       ./cert.crt
-  #];
+  security.pki.certificateFiles = [
+          ./cert.crt
+  ];
 
   programs.zsh = {
     ohMyZsh = {

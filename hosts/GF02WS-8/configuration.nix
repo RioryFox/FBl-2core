@@ -96,7 +96,7 @@ in {
 
   networking = {
     hostName = "GF02WS-8";
-    networkmanager.enable = false;
+    networkmanager.enable = true;
     useDHCP = false;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
   };

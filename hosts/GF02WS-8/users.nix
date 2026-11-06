@@ -75,10 +75,6 @@ in {
     defaultUserShell = pkgs.zsh;
   };
 
-  security.pki.certificateFiles = [
-          ./cert.crt
-  ];
-
   programs.zsh = {
     ohMyZsh = {
       enable = true;
