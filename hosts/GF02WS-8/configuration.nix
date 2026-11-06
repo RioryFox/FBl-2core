@@ -5,10 +5,6 @@
   ...
 }: let
   inherit (import ./variables.nix) keyboardLayout;
-  #lanInterface = config.fbl.network.interfaces.gf02Lan;
-  #lanAddress = config.fbl.network.hosts.gf02;
-  #lanPrefix = config.fbl.network.lan.prefixLength;
-  #lanGateway = config.fbl.network.lan.gateway;
   publicDns = config.fbl.network.upstream.publicDns;
   sshPort = config.fbl.ports.tcp.ssh;
 in {
@@ -101,22 +97,9 @@ in {
   networking = {
     hostName = "GF02WS-8";
     networkmanager.enable = false;
+    useDHCP = false;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
   };
-
-  networking.useDHCP = true;
-  networking.interfaces.${lanInterface} = {
-    useDHCP = true;
-  };
-  networking.defaultGateway = {
-    address = lanGateway;
-    interface = lanInterface;
-  };
-  networking.nameservers = [ lanGateway publicDns ];
-  networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
-    if config.services.openssh.enable
-    then [ sshPort ]
-    else [ ];
 
   services = {
     xserver = {
