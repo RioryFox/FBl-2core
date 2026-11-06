@@ -93,6 +93,20 @@
         modules = [ ./hosts/GF01WS-16/configuration.nix ];
       };
 
+      GF02WS-8 = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs system;
+          host = "GF02WS-8";
+          username = "andow";
+          pkgsUnstable = UnstablePkgs;
+        };
+        modules = [
+          ./hosts/GF02WS-8/configuration.nix
+        ];
+      };
+
+
 
     };
 

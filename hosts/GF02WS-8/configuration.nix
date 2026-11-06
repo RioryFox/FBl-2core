@@ -101,7 +101,7 @@ in {
   local.hardware-clock.enable = false;
 
   networking = {
-    hostName = "GF01WS-16";
+    hostName = "GF02WS-8";
     networkmanager.enable = false;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
   };
