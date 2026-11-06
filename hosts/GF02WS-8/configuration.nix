@@ -5,10 +5,10 @@
   ...
 }: let
   inherit (import ./variables.nix) keyboardLayout;
-  lanInterface = config.fbl.network.interfaces.gf01Lan;
-  lanAddress = config.fbl.network.hosts.gf01;
-  lanPrefix = config.fbl.network.lan.prefixLength;
-  lanGateway = config.fbl.network.lan.gateway;
+  #lanInterface = config.fbl.network.interfaces.gf02Lan;
+  #lanAddress = config.fbl.network.hosts.gf02;
+  #lanPrefix = config.fbl.network.lan.prefixLength;
+  #lanGateway = config.fbl.network.lan.gateway;
   publicDns = config.fbl.network.upstream.publicDns;
   sshPort = config.fbl.ports.tcp.ssh;
 in {
@@ -34,9 +34,7 @@ in {
     ../../modules/programs/steam.nix
     ../../modules/programs/amnezia-vpn.nix
 
-    ../../modules/services/yggdrasil.nix
-    ../../modules/services/gf-monitoring-exporters.nix
-    ../../modules/services/zapret2.nix
+    #../../modules/services/zapret2.nix
   ];
 
   boot = {
@@ -109,12 +107,6 @@ in {
   networking.useDHCP = true;
   networking.interfaces.${lanInterface} = {
     useDHCP = true;
-    ipv4.addresses = [
-      {
-        address = lanAddress;
-        prefixLength = lanPrefix;
-      }
-    ];
   };
   networking.defaultGateway = {
     address = lanGateway;
