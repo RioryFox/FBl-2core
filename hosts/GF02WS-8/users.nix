@@ -56,7 +56,6 @@ in {
         libreoffice
         ani-cli
         shotcut
-        traceroute
         minicom
         (python3.withPackages (python-pkgs:
           with python-pkgs; [
