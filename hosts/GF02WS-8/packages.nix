@@ -1,0 +1,59 @@
+{ lib, pkgs, pkgsUnstable, ... }:
+
+let
+  myVkApi = pkgs.python3.pkgs.buildPythonPackage rec {
+    pname = "vk_api";
+    version = "11.10.0";
+    format = "setuptools";
+    src = pkgs.python3.pkgs.fetchPypi {
+      pname = "vk_api";
+      inherit version;
+      hash = "sha256-pj+9fXqdOTSGONPq3kn5ZOjr66CJigcLA6fwgtv10RI=";
+    };
+    propagatedBuildInputs = with pkgs.python3.pkgs; [
+      requests
+    ];
+    meta = with lib; {
+      description = "Python module for VK API";
+      homepage = "https://vk-api.readthedocs.io/";
+    };
+  };
+
+  python-packages = pkgs.python3.withPackages (ps: with ps; [
+    requests
+    pandas
+    pyquery
+    flask
+    myVkApi
+  ]);
+
+  unstablePackages = with pkgsUnstable; [
+    kaidan
+    dino
+    profanity
+    amnezia-vpn
+  ];
+  
+  stablePackages = with pkgs; [
+    mpvpaper
+    git
+    rclone
+    python3
+    xauth
+    python-packages
+    convertx
+    qbittorrent
+    #dillo
+    browsh
+    goofcord
+    discord
+  ];
+
+in {
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = 
+    stablePackages
+    ++ unstablePackages;
+  
+}
