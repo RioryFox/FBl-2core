@@ -86,7 +86,7 @@ in
   };
 
   services.redis.servers.nextcloud.settings = {
-    maxmemory = "3gb";
+    maxmemory = "2gb";
     maxmemory-policy = "allkeys-lru";
   };
 
