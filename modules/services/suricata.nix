@@ -3,6 +3,9 @@
 {
   services.suricata = {
     enable = true;
+    enabledSources = [
+      "et/open"
+    ];
     settings = {
       classification-file = "${config.services.suricata.package}/etc/suricata/classification.config";
       af-packet = [
