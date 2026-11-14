@@ -204,7 +204,7 @@
     cpu-x
     cyme
     gdu
-    glances
+    #glances #package 'python3.13-python-jose-3.5.0' in /nix/store/cjndb9il5365hpqnn5k8gxp4w02xybsw-source/pkgs/development/python-modules/python-jose/default.nix:62 because it is marked as insecure CVE-2026-120459
     gping
     htop
     hyfetch

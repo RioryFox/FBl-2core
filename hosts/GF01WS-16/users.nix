@@ -48,7 +48,7 @@ in {
 
       packages = with pkgs; [
         firefox
-        chromium
+        #chromium
         librewolf
         dbeaver-bin
         esptool
