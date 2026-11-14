@@ -59,6 +59,7 @@ in
     datadir = nextcloudData;
     database.createLocally = true;
     configureRedis = true;
+    maxUploadSize = "20G";
 
     extraApps = {
       inherit (pkgs.nextcloud33Packages.apps) spreed;
