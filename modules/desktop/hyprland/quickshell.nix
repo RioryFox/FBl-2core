@@ -5,7 +5,10 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default. override {
+      withX11 = false;
+    })
+
 
     # Qt6 dependencies for quickshell
     qt6.qtbase

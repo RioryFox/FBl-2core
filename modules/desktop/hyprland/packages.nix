@@ -116,7 +116,7 @@
     glib
     gsettings-qt
     git
-    google-chrome
+    #google-chrome
     gnome-system-monitor
     jq
     gcc
@@ -164,7 +164,7 @@
     xdg-user-dirs
     yt-dlp
 
-    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.ags.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.tabby-terminal.packages.${pkgs.stdenv.hostPlatform.system}.default
 
