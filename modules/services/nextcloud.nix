@@ -60,6 +60,7 @@ in
     database.createLocally = true;
     configureRedis = true;
     maxUploadSize = "20G";
+    fastcgiTimeout = 900;
 
     extraApps = {
       inherit (pkgs.nextcloud33Packages.apps) spreed;
