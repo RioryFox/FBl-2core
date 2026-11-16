@@ -6,6 +6,7 @@
 
 # FBL local/archive material
 /_archive/
+/backuper/
 /SSH-pub/
 /hosts/GF01WS-16/dotfiles/snapshots/
 /hosts/GF01WS-16/legacy-installer/
