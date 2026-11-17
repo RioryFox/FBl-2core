@@ -58,7 +58,7 @@ in {
         wireshark
         steam
         goofcord
-        discord
+        #discord
         libreoffice
         ani-cli
         shotcut

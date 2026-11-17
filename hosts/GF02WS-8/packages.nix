@@ -45,7 +45,8 @@ let
     qbittorrent
     #dillo
     browsh
-    discord
+    goofcord
+    #discord
   ];
 
 in {
