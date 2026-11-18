@@ -46,7 +46,7 @@ let
     #dillo
     browsh
     goofcord
-    #discord
+    discord
   ];
 
 in {
