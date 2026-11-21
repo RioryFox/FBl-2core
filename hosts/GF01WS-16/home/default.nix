@@ -25,6 +25,7 @@
   '';
 in {
   imports = [
+    ./ghostesp-extcap.nix
     ./terminals/tmux.nix
     ./terminals/ghostty.nix
     ./cli/bat.nix
