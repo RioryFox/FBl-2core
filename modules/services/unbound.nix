@@ -26,7 +26,7 @@ in
           forward-tls-upstream = true;
           forward-addr = [
             #cloudflare-dns.com
-            #"1.1.1.1@853#cloudflare-dns.com" - [homefox@Cr01MS-32:~/FBl-2core]$ dig @1.1.1.1 query yt3.ggpht.com +short  give fake ip adress 188.186.154.88
+            "1.1.1.1@853#cloudflare-dns.com" # without DoT - [homefox@Cr01MS-32:~/FBl-2core]$ dig @1.1.1.1 query yt3.ggpht.com +short  give fake ip adress 188.186.154.88
             "1.0.0.1@853#cloudflare-dns.com"
             #dns.google
             "8.8.4.4@853#dns.google"

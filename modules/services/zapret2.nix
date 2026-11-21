@@ -43,6 +43,7 @@ in {
         "googlevideo.com"
         "ytimg.com"
         "youtubei.googleapis.com"
+        "yt3.ggpht.com"
 
         "discord.com"
         "discord.gg"
