@@ -11,11 +11,11 @@ let
         interface = [
           "127.0.0.1"
           "${config.fbl.network.hosts.cr01}"
-        ] ++ lib.optional ipv6 "::1/128";
+        ] ++ lib.optional ipv6 "::1";
         access-control = [
           "127.0.0.0/8 allow"
           "${config.fbl.network.lan.cidr} allow"
-        ] ++ lib.optional ipv6 "::1/128 allow";;
+        ] ++ lib.optional ipv6 "::1/128 allow";
 
         serve-expired = true;
         serve-expired-ttl = 86400;
@@ -33,7 +33,7 @@ let
             "8.8.8.8@853#dns.google"
             #dns.quad.net
             "9.9.9.9@853#dns.quad.net"
-            "149.112.112.122@853#dns.quad.net"
+            "149.112.112.122@853#dns.quad9.net"
             #common.det.dns.yandex.net
             "77.88.8.8@853#common.det.dns.yandex.net"
           ];
