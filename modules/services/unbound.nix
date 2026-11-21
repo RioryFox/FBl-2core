@@ -32,7 +32,7 @@
             "9.9.9.9@853#dns.quad.net"
             "149.112.112.122@853#dns.quad.net"
             #common.det.dns.yandex.net
-            "77.88.8.8@common.det.dns.yandex.net"
+            "77.88.8.8@853#common.det.dns.yandex.net"
           ];
         }
       ];
