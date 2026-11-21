@@ -2,7 +2,7 @@
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg:
-  builtins.elem (lib.getNAme phg) [
+  builtins.elem (lib.getName phg) [
     "cloudflare-warp"
   ];
 
