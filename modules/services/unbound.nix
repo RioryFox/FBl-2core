@@ -32,10 +32,10 @@ in
             "8.8.4.4@853#dns.google"
             "8.8.8.8@853#dns.google"
             #dns.quad.net
-            "9.9.9.9@853#dns.quad.net"
-            "149.112.112.122@853#dns.quad9.net"
+            "9.9.9.9@853#dns.quad9.net"
+            "149.112.112.112@853#dns.quad9.net"
             #common.det.dns.yandex.net
-            "77.88.8.8@853#common.det.dns.yandex.net"
+            "77.88.8.8@853#common.dot.dns.yandex.net"
           ];
         }
       ];
