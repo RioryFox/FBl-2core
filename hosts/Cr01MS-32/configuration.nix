@@ -93,7 +93,7 @@ in
     address = lanGateway;
     interface = lanInterface;
   };
-  networking.nameservers = [ lanGateway publicDns ];
+  networking.nameservers = [ "127.0.0.1" ];
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.openssh.enable
     then [ sshPort ]

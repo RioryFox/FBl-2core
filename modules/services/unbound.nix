@@ -26,7 +26,7 @@ in
           forward-tls-upstream = true;
           forward-addr = [
             #cloudflare-dns.com
-            "1.1.1.1@853#cloudflare-dns.com"
+            #"1.1.1.1@853#cloudflare-dns.com" - [homefox@Cr01MS-32:~/FBl-2core]$ dig @1.1.1.1 query yt3.ggpht.com +short  give fake ip adress 188.186.154.88
             "1.0.0.1@853#cloudflare-dns.com"
             #dns.google
             "8.8.4.4@853#dns.google"
@@ -35,7 +35,8 @@ in
             "9.9.9.9@853#dns.quad9.net"
             "149.112.112.112@853#dns.quad9.net"
             #common.det.dns.yandex.net
-            "77.88.8.8@853#common.dot.dns.yandex.net"
+            #"77.88.8.1@853#common.dot.dns.yandex.net" [homefox@Cr01MS-32:~/FBl-2core]$ dig @77.88.8.1 query yt3.ggpht.com +short give fake IP adress 188.186.154.88
+            "77.88.8.2@853#common.dot.dns.yandex.net"
           ];
         }
       ];

@@ -121,7 +121,10 @@ in {
     address = lanGateway;
     interface = lanInterface;
   };
-  networking.nameservers = [ lanGateway publicDns ];
+  networking.nameservers = [ 
+    config.fbl.network.hosts.cr01
+    #lanGateway publicDns 
+  ];
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.openssh.enable
     then [ sshPort ]
