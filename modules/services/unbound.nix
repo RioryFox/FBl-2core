@@ -1,4 +1,7 @@
-{ config, ...}:
+{ config, lib, ...}:
+
+let
+  ipv6 = config.networking.enableIPv6;
 
 {
   services.unbound = {
