@@ -2,7 +2,7 @@
 
 let
   ipv6 = config.networking.enableIPv6;
-
+in
 {
   services.unbound = {
     enable = true;
