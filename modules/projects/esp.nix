@@ -1,12 +1,21 @@
 { pkgs, ... }:
 
+let 
+  espPython = pkgs.python3.withPackages (ps: with ps; [
+    numpy 
+    pillow 
+    pyserial
+  ]);
+
+  espPythonCli = pkgs.writeShellScriptBin "esp-py" ''
+    exec ${espPython}/bin/python3 "$@"
+  '';
+
+in
 {
   environment.systemPackages = with pkgs; [
-    (python3.withPackages (ps: with ps; [ 
-      numpy 
-      pillow 
-      pyserial
-    ]))
+    espPythonCli
+
     arduino-cli
     esptool
     ffmpeg

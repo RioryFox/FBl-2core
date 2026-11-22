@@ -20,12 +20,18 @@ let
   };
 
   python-packages = pkgs.python3.withPackages (ps: with ps; [
-    requests
     pandas
     pyquery
     flask
     myVkApi
-  ]);
+    requests
+    levenshtein
+    httpx
+    beautifulsoup4
+    pip
+    pytz
+    aiogram
+]);
 
   unstablePackages = with pkgsUnstable; [
     kaidan

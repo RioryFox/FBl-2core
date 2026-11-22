@@ -51,8 +51,6 @@ in {
         chromium
         librewolf
         dbeaver-bin
-        esptool
-        platformio
         figma-linux
         telegram-desktop
         wireshark
@@ -65,17 +63,6 @@ in {
         traceroute
         rclone
         minicom
-        (python3.withPackages (python-pkgs:
-          with python-pkgs; [
-            requests
-            levenshtein
-            httpx
-            beautifulsoup4
-            pip
-            myVkApi
-            pytz
-            aiogram
-          ]))
       ];
     };
 
