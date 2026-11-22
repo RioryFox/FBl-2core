@@ -35,6 +35,19 @@ in {
     };
 
     profiles = {
+      warp-api = {
+        priority = 40;
+
+        host.include = [
+          "api.cloudflareclient.com"
+        ];
+
+        parameters = [
+          "--filter-udp=443"
+          "--payload=quic_initial"
+          "--lua-desync=fake:blob=fake_default_quic:badsum:repeats=6"
+        ];
+      };
       quic = {
         priority = 50;
 
@@ -44,9 +57,9 @@ in {
         ];
 
         parameters = [
-          "--filter-udp=443"
-          "--payload=quic_initial"
-          "--lua-desync=fake:blob=fake_default_quic:badsum:repeats=6"
+          "--filter-tcp=443"
+          "--payload=tls_client_hello"
+          "--lua-desync=fake:blob=fake_default_http:tcp_ts=-600000:repeats=6"
         ];
       };
 
@@ -66,8 +79,6 @@ in {
           "discordapp.com"
           "discordapp.net"
           "discord.media"
-
-          "api.cloudflareclient.com"
         ];
 
         parameters = [
