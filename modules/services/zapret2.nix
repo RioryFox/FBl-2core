@@ -66,6 +66,8 @@ in {
           "discordapp.com"
           "discordapp.net"
           "discord.media"
+
+          "api.cloudflareclient.com"
         ];
 
         parameters = [
