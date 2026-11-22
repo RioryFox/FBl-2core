@@ -1,4 +1,4 @@
-{ config, inputs, pkgsUnstable, ... }:
+{ lib, config, inputs, pkgsUnstable, ... }:
 
 let
   httpsPort = config.fbl.ports.tcp.https;
@@ -57,6 +57,7 @@ in {
         "--payload=tls_client_hello"
         "--lua-desync=fake:blob=fake_default_tls:tcp_ts=-1000:repeats=1"
         "--lua-desync=fakedsplit:pos=1,midsld:tcp_ts=-1000"
+        "--lua-desync=multidisorder:pos=1,midsld"
       ];
     };
   };
