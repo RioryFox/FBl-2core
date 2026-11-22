@@ -28,37 +28,52 @@ in {
       interfaces = [ myInterface ];
 
       tcpPorts = [ httpsPort ];
-      udpPorts = [];
+      udpPorts = [ 443 ];
 
       maxPackets = 16;
       queue = 200;
     };
 
-    profiles.https = {
-      priority = 100;
+    profiles = {
+      quic = {
+        priority = 50;
+        host.include = [
+          "youtube.com"
+          "googlevideo.com"
+        ];
 
-      hosts.include = [
-        "youtube.com"
-        "youtu.be"
-        "googlevideo.com"
-        "ytimg.com"
-        "youtubei.googleapis.com"
-        "yt3.ggpht.com"
+        parameters = [
+          "--filter-udp=443"
+          "--payload=quic_initial"
+          "--lua-desync=fake:blob=fake_default_quic:badsum:repeats=6"
+        ];
+      };
 
-        "discord.com"
-        "discord.gg"
-        "discordapp.com"
-        "discordapp.net"
-        "discord.media"
-      ];
+      https = {
+        priority = 100;
 
-      parameters = [
-        "--filter-tcp=${toString httpsPort}"
-        "--payload=tls_client_hello"
-        "--lua-desync=fake:blob=fake_default_tls:tcp_ts=-1000:repeats=1"
-        "--lua-desync=fakedsplit:pos=1,midsld:tcp_ts=-1000"
-        "--lua-desync=multidisorder:pos=1,midsld"
-      ];
+        hosts.include = [
+          "youtube.com"
+          "youtu.be"
+          "googlevideo.com"
+          "ytimg.com"
+          "youtubei.googleapis.com"
+          "yt3.ggpht.com"
+
+          "discord.com"
+          "discord.gg"
+          "discordapp.com"
+          "discordapp.net"
+          "discord.media"
+        ];
+
+        parameters = [
+          "--filter-tcp=${toString httpsPort}"
+          "--payload=tls_client_hello"
+          "--lua-desync=fake:blob=fake_default_tls:tcp_ts=-1000:repeats=6"
+          "--lua-desync=fakedsplit:pos=1,midsld:tcp_ts=-1000"
+        ];
+      };
     };
   };
 }
