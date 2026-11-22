@@ -38,7 +38,7 @@ in {
       warp-api = {
         priority = 40;
 
-        host.include = [
+        hosts.include = [
           "api.cloudflareclient.com"
         ];
 
