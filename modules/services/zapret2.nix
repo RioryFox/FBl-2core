@@ -37,7 +37,8 @@ in {
     profiles = {
       quic = {
         priority = 50;
-        host.include = [
+
+        hosts.include = [
           "youtube.com"
           "googlevideo.com"
         ];
