@@ -123,7 +123,7 @@ in {
   };
   networking.nameservers = [ 
     config.fbl.network.hosts.cr01
-    #lanGateway publicDns 
+    lanGateway publicDns 
   ];
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.openssh.enable
