@@ -35,6 +35,7 @@ in {
     ../../modules/programs/amnezia-vpn.nix
 
     ../../modules/services/yggdrasil.nix
+    ../../modules/services/unbound.nix
     ../../modules/services/gf-monitoring-exporters.nix
     ../../modules/services/zapret2.nix
     ../../modules/services/cloudflare-warp.nix
