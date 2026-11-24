@@ -36,7 +36,7 @@ in
             "149.112.112.112" #@853#dns.quad9.net"
             #common.det.dns.yandex.net
             #"77.88.8.1@853#common.dot.dns.yandex.net" [homefox@Cr01MS-32:~/FBl-2core]$ dig @77.88.8.1 query yt3.ggpht.com +short give fake IP adress 188.186.154.88
-            "77.88.8.2" #@853#safe.dot.dns.yandex.net"
+            #"77.88.8.2" #@853#safe.dot.dns.yandex.net"
           ];
         }
       ];
