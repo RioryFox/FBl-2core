@@ -10,7 +10,7 @@ let
 
 in {
   services.zapret = {
-    enable = true;
+    enable = false;
     package = pkgsUnstable.zapret;
 
     configureFirewall = true;

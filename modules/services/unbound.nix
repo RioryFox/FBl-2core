@@ -2,7 +2,7 @@
 
 let
   ipv6 = config.networking.enableIPv6;
-  isCr01 = config.networking.hostName == "Cr01MS-32;"
+  isCr01 = config.networking.hostName == "Cr01MS-32";
 in
 {
   services.unbound = {

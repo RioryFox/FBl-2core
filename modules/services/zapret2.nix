@@ -20,7 +20,7 @@ in {
   documentation.nixos.checkRedirects = false;
 
   services.zapret2 = {
-    enable = true;
+    enable = false;
     package = pkgsUnstable.zapret2;
 
     firewall = {
