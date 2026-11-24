@@ -124,10 +124,14 @@ in {
   };
   networking.nameservers = [ 
     config.fbl.network.hosts.cr01
-    lanGateway publicDns 
+    "127.0.0.1"
+    "1.0.0.1"
     "1.1.1.1"
+    "8.8.4.4"
     "8.8.8.8"
     "9.9.9.9"
+    "149.112.112.112"
+    lanGateway
   ];
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.openssh.enable

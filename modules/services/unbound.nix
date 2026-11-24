@@ -2,19 +2,18 @@
 
 let
   ipv6 = config.networking.enableIPv6;
+  isCr01 = config.networking.hostName == "Cr01MS-32;"
 in
 {
   services.unbound = {
     enable = true;
     settings = {
       server = {
-        interface = [
-          "127.0.0.1"
-          "${config.fbl.network.hosts.cr01}"
+        interface = [ "127.0.0.1" ]
+          ++ lib.optionals isCr01 [ "${config.fbl.network.hosts.cr01}" ]
         ] ++ lib.optional ipv6 "::1";
-        access-control = [
-          "127.0.0.0/8 allow"
-          "${config.fbl.network.lan.cidr} allow"
+        access-control = [ "127.0.0.0/8 allow" ] 
+          ++ lib.optionals isCr01 ["${config.fbl.network.lan.cidr} allow"]
         ] ++ lib.optional ipv6 "::1/128 allow";
 
         serve-expired = true;
