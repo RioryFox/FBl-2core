@@ -11,10 +11,10 @@ in
       server = {
         interface = [ "127.0.0.1" ]
           ++ lib.optionals isCr01 [ "${config.fbl.network.hosts.cr01}" ]
-        ] ++ lib.optional ipv6 "::1";
+          ++ lib.optional ipv6 "::1";
         access-control = [ "127.0.0.0/8 allow" ] 
           ++ lib.optionals isCr01 ["${config.fbl.network.lan.cidr} allow"]
-        ] ++ lib.optional ipv6 "::1/128 allow";
+          ++ lib.optional ipv6 "::1/128 allow";
 
         serve-expired = true;
         serve-expired-ttl = 86400;
