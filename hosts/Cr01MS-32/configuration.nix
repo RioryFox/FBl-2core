@@ -72,8 +72,11 @@ in
   };
   boot.loader.systemd-boot.configurationLimit = 5;
 
-  networking.hostName = "Cr01MS-32";
-  networking.networkmanager.enable = false;
+  networking = {
+    hostName = "Cr01MS-32";
+    networkmanager.enable = false;
+    wireless.enable = false;
+  };
 
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0bda", ATTR{idProduct}=="b812", GROUP="kvm"
