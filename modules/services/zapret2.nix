@@ -5,7 +5,9 @@ let
   
   myInterface =
     if config.networking.hostName == "Cr01MS-32"
-    then config.fbl.network.interfaces.cr01Lan
+    then [ 
+      config.fbl.network.interfaces.cr01Lan 
+    ]
 
     else if config.networking.hostName == "GF01WS-16"
     then [
