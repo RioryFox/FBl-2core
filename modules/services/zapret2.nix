@@ -60,6 +60,7 @@ in {
 
         hosts.include = [
           "youtube.com"
+          "youtu.be"
           "googlevideo.com"
         ];
 
