@@ -98,12 +98,6 @@ in
   };
   networking.nameservers = [ 
     "127.0.0.1"
-    "1.0.0.1"
-    "1.1.1.1"
-    "8.8.4.4"
-    "8.8.8.8"
-    "9.9.9.9"
-    "149.112.112.112"
    ];
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.openssh.enable
