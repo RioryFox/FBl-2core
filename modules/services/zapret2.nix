@@ -66,7 +66,7 @@ in {
       };
 
       https = {
-        priority = 100;
+        priority = 10;
 
         hosts.include = [
           "youtube.com"
