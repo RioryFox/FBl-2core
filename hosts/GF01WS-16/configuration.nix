@@ -121,7 +121,7 @@ in {
   };
   networking.defaultGateway = {
     address = lanGateway;
-    interface = lanInterface;
+    interfaces = lanInterface;
   };
   networking.nameservers = [ 
     config.fbl.network.hosts.cr01
