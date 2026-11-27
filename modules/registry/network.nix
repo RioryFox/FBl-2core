@@ -13,7 +13,7 @@
       };
       gateway = lib.mkOption {
         type = lib.types.str;
-        default = "192.168.3.1";
+        default = "127.0.0.1";
       };
     };
 
@@ -24,7 +24,7 @@
       };
       dns = lib.mkOption {
         type = lib.types.str;
-        default = "192.168.2.1";
+        default = "127.0.0.1";
       };
       publicDns = lib.mkOption {
         type = lib.types.str;

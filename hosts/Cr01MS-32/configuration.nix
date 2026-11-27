@@ -104,7 +104,6 @@ in
     "8.8.8.8"
     "9.9.9.9"
     "149.112.112.112"
-    lanGateway
    ];
   networking.firewall.interfaces.${lanInterface}.allowedTCPPorts =
     if config.services.openssh.enable
