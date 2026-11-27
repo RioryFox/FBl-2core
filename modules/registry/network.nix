@@ -24,7 +24,7 @@
       };
       dns = lib.mkOption {
         type = lib.types.str;
-        default = "127.0.0.1";
+        default = "192.168.2.1";
       };
       publicDns = lib.mkOption {
         type = lib.types.str;
