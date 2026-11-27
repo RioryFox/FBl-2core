@@ -38,7 +38,6 @@ let
     dino
     profanity
     gajim
-    amnezia-vpn
   ];
   
   stablePackages = with pkgs; [
