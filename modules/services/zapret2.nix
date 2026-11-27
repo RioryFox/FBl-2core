@@ -29,7 +29,7 @@ in {
 
     firewall = {
       configureAutomatically = true;
-      interfaces = [ myInterface ];
+      interfaces =  myInterface ;
 
       tcpPorts = [ httpsPort ];
       udpPorts = [ 443 ];
