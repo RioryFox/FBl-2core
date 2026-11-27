@@ -104,9 +104,9 @@ in {
 
   networking = {
     hostName = "GF01WS-16";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
     timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
-    wireless.enable = true;
+    wireless.enable = false;
   };
 
   networking.useDHCP = false;

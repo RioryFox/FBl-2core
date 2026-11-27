@@ -45,6 +45,7 @@
       default = {
         cr01Lan = "enp3s0";
         gf01Lan = "enp4s0f4u1c2";
+        gf01Wifi = "wlp1s0";
       };
     };
 
