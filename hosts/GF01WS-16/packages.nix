@@ -51,6 +51,7 @@ let
     qbittorrent
     #dillo
     browsh
+    flclash
   ];
 
 in {
